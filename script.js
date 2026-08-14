@@ -7,31 +7,41 @@ function initProposalApp() {
     const nav = document.getElementById('main-nav');
     const backToTopBtn = document.getElementById('backToTop');
 
-    window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-        if (scrollY > 60) { nav.classList.add('scrolled'); }
-        else { nav.classList.remove('scrolled'); }
-        if (scrollY > 500) { backToTopBtn.classList.add('visible'); }
-        else { backToTopBtn.classList.remove('visible'); }
-    });
+    if (nav || backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            if (nav) {
+                if (scrollY > 60) { nav.classList.add('scrolled'); }
+                else { nav.classList.remove('scrolled'); }
+            }
+            if (backToTopBtn) {
+                if (scrollY > 500) { backToTopBtn.classList.add('visible'); }
+                else { backToTopBtn.classList.remove('visible'); }
+            }
+        });
+    }
 
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 
     // --- Mobile menu toggle ---
     const mobileToggle = document.getElementById('mobileToggle');
     const navLinks = document.querySelector('.nav-links');
 
-    mobileToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('mobile-open');
-    });
-
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('mobile-open');
+    if (mobileToggle && navLinks) {
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-open');
         });
-    });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('mobile-open');
+            });
+        });
+    }
 
     // --- Counter animation ---
     function animateCounters() {
