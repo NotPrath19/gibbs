@@ -2,7 +2,7 @@
    GIBBS EDU TECH PROPOSAL — JavaScript
    =========================== */
 
-document.addEventListener('DOMContentLoaded', () => {
+function initProposalApp() {
     // --- Navbar scroll behavior ---
     const nav = document.getElementById('main-nav');
     const backToTopBtn = document.getElementById('backToTop');
@@ -175,5 +175,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 ? '<i class="fas fa-calendar-alt"></i> 12-Week Breakdown <span style="font-size:0.7em;opacity:0.5">(click to collapse)</span>'
                 : '<i class="fas fa-calendar-alt"></i> 12-Week Breakdown <span style="font-size:0.7em;opacity:0.5">(click to expand)</span>';
         });
-    });
 });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initProposalApp);
+} else {
+    initProposalApp();
+}
