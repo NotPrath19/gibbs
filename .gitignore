@@ -1,0 +1,11 @@
+# Source files (unencrypted)
+*_source.html
+source/
+build.py
+
+# OS/IDE files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log

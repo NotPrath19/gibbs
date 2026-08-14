@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gibbs Edu Tech — Commission Structure (Confidential)</title>
+    <meta name="description" content="Confidential commission structure for Gibbs Edu Tech college partnership program.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== PASSWORD GATE ===== */
+        .password-gate {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-hero);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .password-gate::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: var(--gradient-glow);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+            50% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.7; }
+        }
+
+        .password-card {
+            background: var(--bg-card-dark);
+            border: 1px solid rgba(67, 198, 172, 0.2);
+            border-radius: var(--border-radius);
+            padding: 56px 48px;
+            max-width: 480px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .password-card .lock-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(67, 198, 172, 0.2), rgba(25, 22, 84, 0.3));
+            border: 2px solid rgba(67, 198, 172, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-light);
+            animation: float-icon 3s ease-in-out infinite;
+        }
+
+        @keyframes float-icon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .password-card h2 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 8px;
+        }
+
+        .password-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+
+        .password-input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .password-input-group input {
+            width: 100%;
+            padding: 16px 52px 16px 20px;
+            border-radius: var(--border-radius-sm);
+            border: 1px solid rgba(67, 198, 172, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-white);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            outline: none;
+            transition: all var(--transition-fast);
+            letter-spacing: 2px;
+        }
+
+        .password-input-group input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(67, 198, 172, 0.15);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .password-input-group input::placeholder {
+            letter-spacing: 0;
+            color: var(--text-light);
+            opacity: 0.5;
+        }
+
+        .password-input-group .toggle-password {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: color var(--transition-fast);
+        }
+
+        .password-input-group .toggle-password:hover {
+            color: var(--primary);
+        }
+
+        .password-error {
+            color: var(--danger);
+            font-size: 0.82rem;
+            margin-bottom: 16px;
+            display: none;
+            animation: shake 0.4s ease;
+        }
+
+        .password-error.show {
+            display: block;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-8px); }
+            75% { transform: translateX(8px); }
+        }
+
+        .password-submit {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: var(--border-radius-sm);
+            background: var(--gradient-primary);
+            color: var(--text-white);
+            font-family: var(--font-accent);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-med);
+            letter-spacing: 0.5px;
+        }
+
+        .password-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(67, 198, 172, 0.3);
+        }
+
+        .password-submit:active {
+            transform: translateY(0);
+        }
+
+        /* ===== COMMISSION CONTENT (HIDDEN BY DEFAULT) ===== */
+        .commission-content {
+            display: none;
+        }
+
+        .commission-content.unlocked {
+            display: block;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== COMMISSION HERO ===== */
+        .commission-hero {
+            background: var(--gradient-hero);
+            padding: 120px 0 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .commission-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(transparent, var(--bg-white));
+        }
+
+        .commission-hero .confidential-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            border-radius: 50px;
+            background: rgba(231, 76, 60, 0.15);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            color: #e74c3c;
+            font-family: var(--font-accent);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .commission-hero h1 {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .commission-hero p {
+            color: var(--text-on-dark);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ===== COMMISSION SECTION ===== */
+        .commission-section {
+            padding: 80px 0 100px;
+            background: var(--bg-white);
+        }
+
+        .commission-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 56px;
+        }
+
+        .commission-intro h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .commission-intro p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Commission Tiers Grid */
+        .commission-tiers {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 56px;
+        }
+
+        .commission-tier-card {
+            border-radius: var(--border-radius);
+            padding: 36px 28px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-med);
+            border: 1px solid rgba(67, 198, 172, 0.12);
+        }
+
+        .commission-tier-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .commission-tier-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Tier Colors */
+        .tier-bronze { background: linear-gradient(180deg, #fef3e2 0%, #ffffff 100%); }
+        .tier-bronze::before { background: linear-gradient(90deg, #cd7f32, #e8a858); }
+        .tier-bronze .tier-percentage { color: #cd7f32; }
+
+        .tier-silver { background: linear-gradient(180deg, #f0f0f5 0%, #ffffff 100%); }
+        .tier-silver::before { background: linear-gradient(90deg, #808090, #a8a8b8); }
+        .tier-silver .tier-percentage { color: #6a6a80; }
+
+        .tier-gold { background: linear-gradient(180deg, #fdf7e4 0%, #ffffff 100%); }
+        .tier-gold::before { background: linear-gradient(90deg, #d4a017, #f7cf2e); }
+        .tier-gold .tier-percentage { color: #b8860b; }
+
+        .tier-platinum {
+            background: linear-gradient(180deg, #e8f8f5 0%, #ffffff 100%);
+            border-color: rgba(67, 198, 172, 0.3);
+            box-shadow: 0 4px 20px rgba(67, 198, 172, 0.1);
+        }
+        .tier-platinum::before { background: var(--gradient-primary); }
+        .tier-platinum .tier-percentage { color: var(--primary-dark); }
+
+        .tier-label {
+            font-family: var(--font-accent);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .tier-students {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .tier-students i {
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .tier-students-count {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .tier-students-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .tier-divider {
+            width: 40px;
+            height: 2px;
+            background: rgba(67, 198, 172, 0.2);
+            margin: 0 auto 24px;
+        }
+
+        .tier-percentage {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .tier-percentage-label {
+            font-family: var(--font-accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .tier-commission-detail {
+            padding: 12px 16px;
+            border-radius: var(--border-radius-xs);
+            background: rgba(67, 198, 172, 0.06);
+            border: 1px solid rgba(67, 198, 172, 0.1);
+        }
+
+        .tier-commission-detail p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .tier-commission-detail strong {
+            color: var(--text-primary);
+        }
+
+        /* Highlight the best tier */
+        .tier-best {
+            position: relative;
+        }
+
+        .tier-best-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 4px 10px;
+            border-radius: 50px;
+            background: var(--gradient-primary);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            font-family: var(--font-accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Commission Summary Table */
+        .commission-summary {
+            max-width: 900px;
+            margin: 0 auto 48px;
+        }
+
+        .commission-summary h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .commission-table-wrap {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(67, 198, 172, 0.12);
+        }
+
+        .commission-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .commission-table thead {
+            background: var(--gradient-primary);
+        }
+
+        .commission-table thead th {
+            padding: 16px 20px;
+            color: var(--text-white);
+            font-family: var(--font-accent);
+            font-weight: 600;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .commission-table thead th:first-child {
+            text-align: left;
+        }
+
+        .commission-table tbody td {
+            padding: 16px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            color: var(--text-primary);
+        }
+
+        .commission-table tbody td:first-child {
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .commission-table tbody tr {
+            transition: background var(--transition-fast);
+        }
+
+        .commission-table tbody tr:hover {
+            background: rgba(67, 198, 172, 0.04);
+        }
+
+        .commission-table tbody tr:nth-child(even) {
+            background: rgba(67, 198, 172, 0.02);
+        }
+
+        .commission-table tbody tr:nth-child(even):hover {
+            background: rgba(67, 198, 172, 0.06);
+        }
+
+        .commission-highlight {
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        /* Commission Notes */
+        .commission-notes {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 28px 32px;
+            border-radius: var(--border-radius);
+            background: linear-gradient(135deg, rgba(67, 198, 172, 0.06), rgba(25, 22, 84, 0.04));
+            border: 1px solid rgba(67, 198, 172, 0.12);
+        }
+
+        .commission-notes h4 {
+            font-family: var(--font-accent);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .commission-notes h4 i {
+            color: var(--primary);
+        }
+
+        .commission-notes ul {
+            list-style: none;
+        }
+
+        .commission-notes ul li {
+            padding: 6px 0;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.5;
+        }
+
+        .commission-notes ul li i {
+            color: var(--primary);
+            font-size: 0.75rem;
+            margin-top: 5px;
+        }
+
+        /* Back Link */
+        .commission-back {
+            text-align: center;
+            padding: 40px 0 60px;
+            background: var(--bg-white);
+        }
+
+        .commission-back a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: var(--border-radius-sm);
+            background: var(--gradient-primary);
+            color: var(--text-white);
+            font-family: var(--font-accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all var(--transition-med);
+        }
+
+        .commission-back a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(67, 198, 172, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .commission-tiers {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .commission-tiers {
+                grid-template-columns: 1fr;
+            }
+
+            .commission-hero h1 {
+                font-size: 2rem;
+            }
+
+            .password-card {
+                padding: 40px 28px;
+            }
+
+            .tier-percentage {
+                font-size: 2.8rem;
+            }
+
+            .commission-table {
+                font-size: 0.8rem;
+            }
+
+            .commission-table thead th,
+            .commission-table tbody td {
+                padding: 12px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===================== PASSWORD GATE ===================== -->
+<div id="passwordGate" class="password-gate">
+    <div class="password-card">
+        <div class="lock-icon">
+            <i class="fas fa-lock"></i>
+        </div>
+        <h2>Confidential Access</h2>
+        <p>This document is encrypted and confidential. Enter the partnership access password to decrypt and view the contents.</p>
+        <form id="passwordForm">
+            <div class="password-input-group">
+                <input type="password" id="passwordInput" placeholder="Enter password" autocomplete="off" autofocus>
+                <button type="button" class="toggle-password" id="togglePassword">
+                    <i class="fas fa-eye"></i>
+                </button>
+            </div>
+            <div class="password-error" id="passwordError">
+                <i class="fas fa-exclamation-circle"></i> Incorrect password. Please try again.
+            </div>
+            <button type="submit" class="password-submit">
+                <i class="fas fa-unlock-alt"></i> &nbsp;Decrypt Proposal
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- Container for Decrypted Content -->
+<div id="decryptedContent" class="decrypted-container"></div>
+
+<script>
+    const passwordForm = document.getElementById('passwordForm');
+    const passwordInput = document.getElementById('passwordInput');
+    const passwordError = document.getElementById('passwordError');
+    const passwordGate = document.getElementById('passwordGate');
+    const decryptedContent = document.getElementById('decryptedContent');
+    const togglePassword = document.getElementById('togglePassword');
+
+    // Securely encrypted payload
+    const encryptedPayload = "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";
+
+    // Toggle password visibility
+    togglePassword.addEventListener('click', () => {
+        const type = passwordInput.type === 'password' ? 'text' : 'password';
+        passwordInput.type = type;
+        togglePassword.innerHTML = type === 'password'
+            ? '<i class="fas fa-eye"></i>'
+            : '<i class="fas fa-eye-slash"></i>';
+    });
+
+    // Helper functions for Web Crypto AES-GCM Decryption
+    async function deriveKey(password, salt) {
+        const encoder = new TextEncoder();
+        const keyMaterial = await window.crypto.subtle.importKey(
+            "raw",
+            encoder.encode(password),
+            { name: "PBKDF2" },
+            false,
+            ["deriveKey"]
+        );
+        return window.crypto.subtle.deriveKey(
+            {
+                name: "PBKDF2",
+                salt: salt,
+                iterations: 100000,
+                hash: "SHA-256"
+            },
+            keyMaterial,
+            { name: "AES-GCM", length: 256 },
+            false,
+            ["decrypt"]
+        );
+    }
+
+    async function decryptData(encryptedB64, password) {
+        const binaryString = window.atob(encryptedB64);
+        const bytes = new Uint8Array(binaryString.length);
+        for (let i = 0; i < binaryString.length; i++) {
+            bytes[i] = binaryString.charCodeAt(i);
+        }
+        
+        const salt = bytes.slice(0, 16);
+        const iv = bytes.slice(16, 16 + 12);
+        const ciphertext = bytes.slice(16 + 12);
+        
+        const key = await deriveKey(password, salt);
+        const decrypted = await window.crypto.subtle.decrypt(
+            {
+                name: "AES-GCM",
+                iv: iv
+            },
+            key,
+            ciphertext
+        );
+        return new TextDecoder().decode(decrypted);
+    }
+
+    // Handle unlocking
+    passwordForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const password = passwordInput.value.trim();
+        
+        try {
+            const html = await decryptData(encryptedPayload, password);
+            
+            // Decryption succeeded! Render body
+            decryptedContent.innerHTML = html;
+            
+            // Hide gate and show content
+            passwordError.classList.remove('show');
+            passwordGate.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            passwordGate.style.opacity = '0';
+            passwordGate.style.transform = 'scale(0.95)';
+
+            setTimeout(() => {
+                passwordGate.style.display = 'none';
+                decryptedContent.classList.add('unlocked');
+                window.scrollTo({ top: 0 });
+                
+                // Re-run any scripts contained inside the decrypted HTML
+                const scripts = Array.from(decryptedContent.getElementsByTagName('script'));
+                for (let script of scripts) {
+                    const newScript = document.createElement('script');
+                    if (script.src) {
+                        newScript.src = script.src;
+                    } else {
+                        newScript.textContent = script.textContent;
+                    }
+                    document.body.appendChild(newScript);
+                }
+                
+                // Re-init client side interactivity
+                window.dispatchEvent(new Event('DOMContentLoaded'));
+                window.dispatchEvent(new Event('load'));
+            }, 500);
+            
+        } catch (err) {
+            console.error("Decryption failed:", err);
+            passwordError.classList.add('show');
+            passwordInput.value = '';
+            passwordInput.focus();
+
+            passwordError.style.animation = 'none';
+            passwordError.offsetHeight; // force reflow
+            passwordError.style.animation = '';
+        }
+    });
+
+    passwordInput.focus();
+</script>
+
+</body>
+</html>
