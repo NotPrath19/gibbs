@@ -560,7 +560,10 @@
                         <label for="message">Message / Questions</label>
                         <textarea id="message" rows="4" placeholder="Any specific questions or preferred start date..."></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full"><i class="fas fa-paper-plane"></i> Submit Interest</button>
+                    <div style="display: flex; gap: 16px; margin-top: 16px; flex-wrap: wrap;">
+                        <button type="submit" name="submitType" value="email" class="btn btn-primary" style="flex: 1; min-width: 200px;"><i class="fas fa-envelope"></i> Send via Email</button>
+                        <button type="submit" name="submitType" value="whatsapp" class="btn btn-primary" style="flex: 1; min-width: 200px; background: #25D366; border-color: #25D366;"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+                    </div>
                 </form>
             </div>
         </div>

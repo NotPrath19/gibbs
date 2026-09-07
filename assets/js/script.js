@@ -134,6 +134,9 @@ function initProposalApp() {
         enquiryForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
+            const submitter = e.submitter;
+            const submitType = submitter ? submitter.value : 'email';
+            
             const fullName = document.getElementById('fullName')?.value || '';
             const designation = document.getElementById('designation')?.value || '';
             const email = document.getElementById('email')?.value || '';
@@ -148,22 +151,32 @@ function initProposalApp() {
 
             const text = `New Interest from ${fullName} (${designation})\nEmail: ${email}\nPhone: ${phone}\nTracks Interested: ${tracks}\nMessage: ${message}`;
 
-            const mailtoUrl = `mailto:gibbsedutech@gmail.com?subject=${encodeURIComponent('Partnership Interest - ' + fullName)}&body=${encodeURIComponent(text)}`;
-            const waUrl = `https://wa.me/919171647365?text=${encodeURIComponent(text)}`;
-
-            window.open(waUrl, '_blank');
-            window.location.href = mailtoUrl;
-
-            const btn = enquiryForm.querySelector('button[type="submit"]');
+            let btn = submitter;
+            if (!btn) {
+                btn = enquiryForm.querySelector('button[type="submit"]');
+            }
+            
             const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-check-circle"></i> Opening Mail & WhatsApp...';
+            const originalBg = btn.style.background;
+            const originalBorder = btn.style.borderColor;
+
+            if (submitType === 'whatsapp') {
+                const waUrl = `https://wa.me/919171647365?text=${encodeURIComponent(text)}`;
+                window.open(waUrl, '_blank');
+                btn.innerHTML = '<i class="fas fa-check-circle"></i> Opening WhatsApp...';
+            } else {
+                const mailtoUrl = `mailto:gibbsedutech@gmail.com?subject=${encodeURIComponent('Partnership Interest - ' + fullName)}&body=${encodeURIComponent(text)}`;
+                window.location.href = mailtoUrl;
+                btn.innerHTML = '<i class="fas fa-check-circle"></i> Opening Mail...';
+            }
+
             btn.style.background = 'linear-gradient(135deg, #2ecc71, #27ae60)';
             btn.style.borderColor = '#2ecc71';
 
             setTimeout(() => {
                 btn.innerHTML = originalText;
-                btn.style.background = '';
-                btn.style.borderColor = '';
+                btn.style.background = originalBg;
+                btn.style.borderColor = originalBorder;
                 enquiryForm.reset();
             }, 3000);
         });
