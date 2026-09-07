@@ -1697,33 +1697,27 @@ ul { list-style: none; }
 }
 
 .footer-simple {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     padding-bottom: 36px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+.footer-brand-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 .footer-desc {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     color: var(--text-light);
     line-height: 1.7;
-    margin-top: 16px;
-    max-width: 480px;
-}
-
-.footer-proposal-info {
-    text-align: right;
-}
-
-.footer-proposal-info p {
-    font-size: 0.85rem;
-    color: var(--text-light);
-    margin-bottom: 6px;
-}
-
-.footer-proposal-info strong {
-    color: var(--text-white);
+    margin-top: 14px;
+    max-width: 580px;
 }
 
 .footer-bottom {
