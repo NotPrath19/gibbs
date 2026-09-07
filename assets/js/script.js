@@ -133,9 +133,30 @@ function initProposalApp() {
     if (enquiryForm) {
         enquiryForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            
+            const fullName = document.getElementById('fullName')?.value || '';
+            const designation = document.getElementById('designation')?.value || '';
+            const email = document.getElementById('email')?.value || '';
+            const phone = document.getElementById('phone')?.value || '';
+            
+            const tracksSelect = document.getElementById('tracks');
+            let tracks = '';
+            if (tracksSelect) {
+                tracks = Array.from(tracksSelect.selectedOptions).map(opt => opt.text).join(', ');
+            }
+            const message = document.getElementById('message')?.value || '';
+
+            const text = `New Interest from ${fullName} (${designation})\nEmail: ${email}\nPhone: ${phone}\nTracks Interested: ${tracks}\nMessage: ${message}`;
+
+            const mailtoUrl = `mailto:gibbsedutech@gmail.com?subject=${encodeURIComponent('Partnership Interest - ' + fullName)}&body=${encodeURIComponent(text)}`;
+            const waUrl = `https://wa.me/919171647365?text=${encodeURIComponent(text)}`;
+
+            window.open(waUrl, '_blank');
+            window.location.href = mailtoUrl;
+
             const btn = enquiryForm.querySelector('button[type="submit"]');
             const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-check-circle"></i> Interest Submitted!';
+            btn.innerHTML = '<i class="fas fa-check-circle"></i> Opening Mail & WhatsApp...';
             btn.style.background = 'linear-gradient(135deg, #2ecc71, #27ae60)';
             btn.style.borderColor = '#2ecc71';
 
