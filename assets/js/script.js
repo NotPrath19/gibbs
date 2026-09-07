@@ -128,6 +128,41 @@ function initProposalApp() {
         });
     });
 
+    // --- Custom Multi-Select UI ---
+    const box = document.getElementById('multiSelectBox');
+    const dropdown = document.getElementById('multiSelectDropdown');
+    
+    if (box && dropdown) {
+        const valDisplay = box.querySelector('.multi-select-value');
+        const checkboxes = dropdown.querySelectorAll('input[type="checkbox"]');
+        
+        box.addEventListener('click', () => {
+            const isActive = box.classList.contains('active');
+            box.classList.toggle('active', !isActive);
+            dropdown.style.display = isActive ? 'none' : 'block';
+        });
+        
+        document.addEventListener('click', (e) => {
+            if (!box.contains(e.target) && !dropdown.contains(e.target)) {
+                box.classList.remove('active');
+                dropdown.style.display = 'none';
+            }
+        });
+
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', () => {
+                const selected = Array.from(checkboxes).filter(c => c.checked).map(c => c.value);
+                if (selected.length > 0) {
+                    valDisplay.textContent = selected.join(', ');
+                    valDisplay.style.color = '#fff';
+                } else {
+                    valDisplay.textContent = 'Select preferred tracks...';
+                    valDisplay.style.color = 'rgba(255, 255, 255, 0.5)';
+                }
+            });
+        });
+    }
+
     // --- Form submission ---
     const enquiryForm = document.getElementById('enquiryForm');
     if (enquiryForm) {
@@ -142,11 +177,8 @@ function initProposalApp() {
             const email = document.getElementById('email')?.value || '';
             const phone = document.getElementById('phone')?.value || '';
             
-            const tracksSelect = document.getElementById('tracks');
-            let tracks = '';
-            if (tracksSelect) {
-                tracks = Array.from(tracksSelect.selectedOptions).map(opt => opt.text).join(', ');
-            }
+            const checkboxes = document.querySelectorAll('#multiSelectDropdown input[type="checkbox"]:checked');
+            let tracks = Array.from(checkboxes).map(c => c.value).join(', ');
             const message = document.getElementById('message')?.value || '';
 
             const text = `New Interest from ${fullName} (${designation})\nEmail: ${email}\nPhone: ${phone}\nTracks Interested: ${tracks}\nMessage: ${message}`;
