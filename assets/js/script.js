@@ -177,8 +177,9 @@ function initProposalApp() {
             const email = document.getElementById('email')?.value || '';
             const phone = document.getElementById('phone')?.value || '';
             
-            const checkboxes = document.querySelectorAll('#multiSelectDropdown input[type="checkbox"]:checked');
-            let tracks = Array.from(checkboxes).map(c => c.value).join(', ');
+            const cbx = document.querySelectorAll('#multiSelectDropdown input[type="checkbox"]');
+            const tracks = Array.from(cbx).filter(c => c.checked).map(c => c.value).join(', ') || 'None selected';
+            
             const message = document.getElementById('message')?.value || '';
 
             const text = `New Interest from ${fullName} (${designation})\nEmail: ${email}\nPhone: ${phone}\nTracks Interested: ${tracks}\nMessage: ${message}`;
@@ -192,25 +193,64 @@ function initProposalApp() {
             const originalBg = btn.style.background;
             const originalBorder = btn.style.borderColor;
 
-            if (submitType === 'whatsapp') {
-                const waUrl = `https://wa.me/919171647365?text=${encodeURIComponent(text)}`;
-                window.open(waUrl, '_blank');
-                btn.innerHTML = '<i class="fas fa-check-circle"></i> Opening WhatsApp...';
-            } else {
-                const mailtoUrl = `mailto:gibbsedutech@gmail.com?subject=${encodeURIComponent('Partnership Interest - ' + fullName)}&body=${encodeURIComponent(text)}`;
-                window.location.href = mailtoUrl;
-                btn.innerHTML = '<i class="fas fa-check-circle"></i> Opening Mail...';
-            }
-
-            btn.style.background = 'linear-gradient(135deg, #2ecc71, #27ae60)';
-            btn.style.borderColor = '#2ecc71';
-
-            setTimeout(() => {
+            const resetFormState = () => {
                 btn.innerHTML = originalText;
                 btn.style.background = originalBg;
                 btn.style.borderColor = originalBorder;
                 enquiryForm.reset();
-            }, 3000);
+                const valDisplay = document.querySelector('.multi-select-value');
+                if (valDisplay) {
+                    valDisplay.textContent = 'Select preferred tracks...';
+                    valDisplay.style.color = 'rgba(255, 255, 255, 0.5)';
+                }
+            };
+
+            if (submitType === 'whatsapp') {
+                const waUrl = `https://wa.me/919171647365?text=${encodeURIComponent(text)}`;
+                window.open(waUrl, '_blank');
+                
+                btn.innerHTML = '<i class="fas fa-check-circle"></i> Opening WhatsApp...';
+                btn.style.background = 'linear-gradient(135deg, #2ecc71, #27ae60)';
+                btn.style.borderColor = '#2ecc71';
+                
+                setTimeout(resetFormState, 3000);
+            } else {
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                
+                fetch("https://formsubmit.co/ajax/gibbsedutech@gmail.com", {
+                    method: "POST",
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        Name: fullName,
+                        Designation: designation,
+                        Email: email,
+                        Phone: phone,
+                        Tracks: tracks,
+                        Message: message,
+                        _subject: `Partnership Interest - ${fullName}`
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    btn.innerHTML = '<i class="fas fa-check-circle"></i> Sent Successfully!';
+                    btn.style.background = 'linear-gradient(135deg, #2ecc71, #27ae60)';
+                    btn.style.borderColor = '#2ecc71';
+                    setTimeout(resetFormState, 3000);
+                })
+                .catch(error => {
+                    btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error Sending';
+                    btn.style.background = '#e74c3c';
+                    btn.style.borderColor = '#e74c3c';
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.style.background = originalBg;
+                        btn.style.borderColor = originalBorder;
+                    }, 3000);
+                });
+            }
         });
     }
 
