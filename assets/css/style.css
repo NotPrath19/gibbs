@@ -356,6 +356,10 @@ ul { list-style: none; }
     box-shadow: var(--shadow-glow);
 }
 
+.mobile-only {
+    display: none !important;
+}
+
 .btn-register-quick {
     background: rgba(247, 183, 51, 0.14);
     border: 1.5px solid var(--accent);
@@ -1931,6 +1935,7 @@ ul { list-style: none; }
     :root { --section-padding: 72px 0; }
     .nav-links, .nav-cta, .nav-actions { display: none; }
     .mobile-toggle { display: flex; }
+    .mobile-only { display: block !important; }
 
     .nav-links.mobile-open {
         display: flex;
@@ -2179,6 +2184,7 @@ ul { list-style: none; }
 #register {
     position: relative;
     padding: var(--section-padding);
+    background: linear-gradient(180deg, #f8fafc 0%, #edf7f5 100%);
 }
 
 .partner-enroll-single {
@@ -2188,21 +2194,21 @@ ul { list-style: none; }
 
 .enroll-card {
     position: relative;
-    background: var(--bg-white);
-    border: 2px solid rgba(67, 198, 172, 0.18);
+    background: #ffffff !important;
+    border: 2px solid rgba(67, 198, 172, 0.22);
     border-radius: var(--border-radius);
     padding: 44px 36px 36px;
     transition: all var(--transition-med);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
 }
 
 .enroll-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(67, 198, 172, 0.4);
-    box-shadow: 0 24px 60px rgba(67, 198, 172, 0.2);
+    border-color: rgba(67, 198, 172, 0.45);
+    box-shadow: 0 24px 60px rgba(67, 198, 172, 0.16);
 }
 
 .enroll-card-glow {
@@ -2276,14 +2282,14 @@ ul { list-style: none; }
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 1.55rem;
-    color: var(--text-primary) !important;
+    color: #191654 !important;
     margin-bottom: 12px;
     text-align: center;
 }
 
 .enroll-desc {
-    font-size: 0.92rem;
-    color: var(--text-secondary) !important;
+    font-size: 0.95rem;
+    color: #374151 !important;
     text-align: center;
     line-height: 1.65;
     margin-bottom: 24px;
@@ -2297,13 +2303,14 @@ ul { list-style: none; }
 }
 
 .enroll-features li {
-    font-size: 0.9rem;
-    color: var(--text-secondary) !important;
-    padding: 8px 0;
+    font-size: 0.92rem;
+    color: #1f2937 !important;
+    padding: 10px 0;
     display: flex;
     align-items: center;
     gap: 12px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    line-height: 1.5;
 }
 
 .enroll-features li:last-child {
@@ -2312,7 +2319,7 @@ ul { list-style: none; }
 
 .enroll-features i {
     color: var(--primary);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     flex-shrink: 0;
 }
 
@@ -2324,10 +2331,48 @@ ul { list-style: none; }
     font-size: 1rem;
     font-weight: 700;
     border-radius: 50px;
+    background: var(--gradient-primary) !important;
+    color: #ffffff !important;
     display: inline-flex;
     align-items: center;
     gap: 10px;
     text-decoration: none;
     transition: all var(--transition-med);
+    box-shadow: 0 4px 18px rgba(67, 198, 172, 0.35);
+}
+
+.enroll-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(67, 198, 172, 0.45);
+    color: #ffffff !important;
+}
+
+.partner-reg-alt-box {
+    margin-top: 28px;
+    text-align: center;
+    padding: 18px 24px;
+    background: rgba(67, 198, 172, 0.06);
+    border: 1px solid rgba(67, 198, 172, 0.18);
+    border-radius: var(--border-radius-sm);
+}
+
+.partner-reg-alt-box h5 {
+    font-family: var(--font-accent);
+    font-size: 0.95rem;
+    color: #191654;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.partner-reg-alt-box p {
+    font-size: 0.88rem;
+    color: #4b5563;
+    margin: 0;
+}
+
+.partner-reg-alt-box a {
+    color: var(--primary-dark);
+    font-weight: 600;
+    text-decoration: underline;
 }
 
