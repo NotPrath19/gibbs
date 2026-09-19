@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gibbs Edu Tech — College Partnership Proposal</title>
-    <meta name="description" content="Formal proposal from Gibbs Edu Tech — 3-month immersive industry-ready training programs with on-campus instructors.">
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <title>Gibbs Edu Tech — Industry-Ready Training for Students</title>
+    <meta name="description" content="Become an industry-ready professional in 12 weeks. Choose from 5 role-based tracks — Software Engineer, QA Engineer, Data Analyst, HR Specialist & Marketing Associate. First batch starts October 30.">
+    <link rel="icon" type="image/png" href="assets/images/gibbs-icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" type="image/png" href="assets/images/gibbs-icon.png">
+    <link rel="stylesheet" href="assets/css/student.css">
 </head>
-<body>
+<body class="student-page">
 
 <!-- ===================== NAVIGATION ===================== -->
 <nav id="main-nav">
@@ -20,15 +20,9 @@
             <img src="assets/images/logo.png" alt="Gibbs Edu Tech Logo" class="logo-img">
         </a>
         <ul class="nav-links">
-            <li><a href="#overview">Overview</a></li>
-            <li><a href="#programs">Programs</a></li>
-            <li><a href="#methodology">How It Works</a></li>
-            <li><a href="#comparison">Comparison</a></li>
-            <li><a href="#why-us">Why Us</a></li>
-            <li><a href="#benefits">Benefits</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <!-- Navigation intentionally minimal — pages don't exist yet -->
         </ul>
-        <a href="#contact" class="nav-cta">Let's Partner</a>
+        <a href="partnership.html" class="nav-cta"><i class="fas fa-handshake"></i> College Partnership Program</a>
         <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
             <span></span><span></span><span></span>
         </button>
@@ -36,551 +30,374 @@
 </nav>
 
 <!-- ===================== HERO ===================== -->
-<section id="hero">
+<section id="hero" class="student-hero">
     <div class="hero-bg-overlay"></div>
     <div class="hero-particles" id="heroParticles"></div>
     <div class="hero-content">
         <div class="hero-badge animate-fade-up">
-            <i class="fas fa-handshake"></i>
-            <span>Partnership Proposal — Prepared Exclusively for Partner Institution</span>
+            <i class="fas fa-graduation-cap"></i>
+            <span>Online & On-Campus Training — First Batch Starts October 30, 2026</span>
         </div>
         <h1 class="hero-title animate-fade-up delay-1">
-            Transform Your Students Into <span class="gradient-text">Industry-Ready Professionals</span>
+            Become <span class="gradient-text">Industry-Ready</span> in 12 Weeks
         </h1>
         <p class="hero-subtitle animate-fade-up delay-2">
-            Gibbs Edu Tech brings immersive, 3-month on-campus training programs that replicate professional company environments — turning students into job-ready Software Engineers, QA Engineers, Data Analysts, HR Specialists & Marketing Associates.
+            Join our immersive, role-based training program and work inside a professional company environment. Choose your track, build real projects, and graduate with a portfolio that gets you hired.
         </p>
-        <div class="hero-stats animate-fade-up delay-3">
-            <div class="stat-item">
-                <span class="stat-number" data-target="5">0</span>
-                <span class="stat-label">Role-Based Tracks</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="3">0</span><span class="stat-suffix"> Months</span>
-                <span class="stat-label">Intensive Program</span>
-            </div>
 
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="60">0</span><span class="stat-suffix"> Students</span>
-                <span class="stat-label">Per Batch</span>
+        <!-- Countdown + Seats Row -->
+        <div class="hero-urgency-row animate-fade-up delay-3">
+            <div class="countdown-box" id="countdownBox">
+                <div class="countdown-label"><i class="fas fa-clock"></i> First Batch Starts In</div>
+                <div class="countdown-timer" id="countdownTimer">
+                    <div class="countdown-unit">
+                        <span class="cd-num" id="cdDays">00</span>
+                        <span class="cd-label">Days</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-unit">
+                        <span class="cd-num" id="cdHours">00</span>
+                        <span class="cd-label">Hours</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-unit">
+                        <span class="cd-num" id="cdMins">00</span>
+                        <span class="cd-label">Mins</span>
+                    </div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-unit">
+                        <span class="cd-num" id="cdSecs">00</span>
+                        <span class="cd-label">Secs</span>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="animate-fade-up delay-3" style="background: rgba(67, 198, 172, 0.15); border: 1px solid rgba(67, 198, 172, 0.3); padding: 16px 24px; border-radius: 12px; margin: 0 auto 32px auto; max-width: 800px; text-align: center;">
-            <h4 style="color: var(--primary-light); font-family: var(--font-accent); margin-bottom: 8px;"><i class="fas fa-user-graduate"></i> Placement Opportunities (Months 3 – 6)</h4>
-            <p style="color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">We provide active placement assistance from the 3rd to the 6th month. To be eligible, students must maintain a minimum attendance of 70% and achieve a final overall grade of at least 50%. <br><em style="font-size: 0.85rem; color: rgba(255,255,255,0.6);">Please note: While we actively facilitate opportunities and prepare students for interviews, placements are not guaranteed.</em></p>
+            <div class="seats-box">
+                <div class="seats-circle">
+                    <svg viewBox="0 0 120 120" class="seats-ring">
+                        <circle cx="60" cy="60" r="52" class="seats-ring-bg"/>
+                        <circle cx="60" cy="60" r="52" class="seats-ring-fill" id="seatsRingFill"/>
+                    </svg>
+                    <div class="seats-number">
+                        <span class="seats-count" id="seatsCount">60</span>
+                        <span class="seats-label">seats left</span>
+                    </div>
+                </div>
+                <div class="seats-meta">
+                    <span class="seats-tag"><i class="fas fa-fire"></i> Limited Seats</span>
+                    <span class="seats-sub">Per track · Per batch</span>
+                </div>
+            </div>
         </div>
 
         <div class="hero-buttons animate-fade-up delay-4">
-            <a href="#programs" class="btn btn-primary"><i class="fas fa-rocket"></i> View Programs</a>
-            <a href="#comparison" class="btn btn-outline"><i class="fas fa-balance-scale"></i> Compare Value</a>
+            <a href="#tracks" class="btn btn-primary"><i class="fas fa-layer-group"></i> Explore Tracks</a>
+            <a href="#enroll" class="btn btn-outline"><i class="fas fa-user-plus"></i> Enroll Now</a>
         </div>
     </div>
     <div class="scroll-indicator animate-fade-up delay-5">
         <div class="mouse"><div class="mouse-wheel"></div></div>
-        <span>Scroll to explore proposal</span>
+        <span>Scroll to explore programs</span>
     </div>
 </section>
 
-<!-- ===================== PREPARED FOR ===================== -->
-<section id="prepared-for" class="section">
-    <div class="container">
-        <div class="prepared-for-banner">
-            <div class="pfb-left">
-                <span class="pfb-tag">Prepared Exclusively For</span>
-                <h2>Partner Institution / College / University</h2>
-                <p>Leading Academic Institution &bull; Dedicated to Student Excellence</p>
-                <p class="pfb-detail">Offering BCA, BBA, B.Tech, MCA, MBA & other degree programs — students across all streams can benefit from Gibbs Edu Tech's industry-immersive training.</p>
-            </div>
-            <div class="pfb-right">
-                <span class="pfb-tag">Proposed By</span>
-                <h2>Gibbs Edu Tech</h2>
-                <p>Immersive On-Campus Training &bull; Professional Company Environment</p>
-                <p class="pfb-detail">We deploy expert instructors directly to your campus for 3 months, running students through a real-world professional company experience.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== OVERVIEW ===================== -->
-<section id="overview" class="section section-dark">
+<!-- ===================== WHAT YOU GET ===================== -->
+<section id="what-you-get" class="section section-dark">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag"><i class="fas fa-lightbulb"></i> The Challenge & Our Solution</span>
-            <h2 class="section-title">Why Your College <span class="gradient-text">Needs This</span></h2>
-            <p class="section-subtitle">Bridge the gap between academic learning and industry expectations — right on your own campus.</p>
+            <span class="section-tag"><i class="fas fa-star"></i> Why This Program</span>
+            <h2 class="section-title">Not Just a Course — A <span class="gradient-text">Professional Experience</span></h2>
+            <p class="section-subtitle">You won't just watch lectures. You'll work as a professional inside a simulated company — with real tools, real deadlines, and real teammates.</p>
         </div>
 
-        <div class="challenge-solution-grid">
-            <div class="cs-card challenge-card">
-                <div class="cs-header">
-                    <div class="cs-icon challenge-icon"><i class="fas fa-exclamation-triangle"></i></div>
-                    <h3>The Challenge</h3>
-                </div>
-                <ul class="cs-list">
-                    <li><i class="fas fa-times-circle"></i> Students graduate with theoretical knowledge but lack practical, job-ready skills</li>
-                    <li><i class="fas fa-times-circle"></i> Employers report a widening gap between college curriculum and industry demands</li>
-                    <li><i class="fas fa-times-circle"></i> Placement-ready training requires expensive infrastructure and industry-experienced instructors</li>
-                    <li><i class="fas fa-times-circle"></i> Students lack exposure to real tools like Git, Docker, Jira, Playwright, BI dashboards</li>
-                    <li><i class="fas fa-times-circle"></i> No professional company experience — students never experience cross-functional teamwork</li>
-                </ul>
+        <div class="value-grid">
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-building"></i></div>
+                <h4>Professional Company Environment</h4>
+                <p>Work inside a simulated startup with Scrum teams, Jira boards, Git repos, and Docker deployments. Experience what a real job feels like.</p>
             </div>
-            <div class="cs-card solution-card">
-                <div class="cs-header">
-                    <div class="cs-icon solution-icon"><i class="fas fa-check-double"></i></div>
-                    <h3>Our Solution</h3>
-                </div>
-                <ul class="cs-list">
-                    <li><i class="fas fa-check-circle"></i> 3-month immersive program with <strong>on-campus instructors</strong></li>
-                    <li><i class="fas fa-check-circle"></i> Students work inside a <strong>professional company environment</strong></li>
-                    <li><i class="fas fa-check-circle"></i> 5 industry role tracks — Software Engineer, QA, Data Analyst, HR, Marketing</li>
-                    <li><i class="fas fa-check-circle"></i> Real tools: Java, Angular, PostgreSQL, Playwright, Git, Docker, Jira, BI Tools</li>
-                    <li><i class="fas fa-check-circle"></i> Cross-functional collaboration — exactly like a real tech company</li>
-                </ul>
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-users-cog"></i></div>
+                <h4>Cross-Functional Collaboration</h4>
+                <p>Software Engineers, QA, Data Analysts, HR & Marketing — all 5 roles work together on one product. Just like in industry.</p>
             </div>
-        </div>
-
-        <div class="overview-image-section">
-            <img src="assets/images/team_training.png" alt="Gibbs Edu Tech training session" loading="lazy" class="overview-img">
-            <div class="overview-caption">
-                <i class="fas fa-info-circle"></i> Our instructors embedded on-campus, working side-by-side with your students
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-tools"></i></div>
+                <h4>Industry Tools From Day 1</h4>
+                <p>Git, Docker, Jira, PostgreSQL, Playwright, BI dashboards — you'll use the same tools that companies use every day.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-briefcase"></i></div>
+                <h4>Portfolio, Not Just a Certificate</h4>
+                <p>Graduate with a GitHub portfolio, demo recordings, and real project artifacts that impress interviewers — not just another certificate.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h4>Expert Mentorship</h4>
+                <p>Industry-experienced instructors guide you with weekly feedback, code reviews, sprint demos, and 1-on-1 mentoring throughout the program.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                <h4>Placement Assistance</h4>
+                <p>Active placement support from months 3–6. Maintain 70% attendance + 50% grade to qualify. We prepare you for interviews and connect you with employers.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===================== PROGRAMS ===================== -->
-<section id="programs" class="section">
+<!-- ===================== TRACKS ===================== -->
+<section id="tracks" class="section">
     <div class="container">
         <div class="section-header">
             <span class="section-tag"><i class="fas fa-layer-group"></i> 5 Role-Based Tracks</span>
-            <h2 class="section-title">Our Training <span class="gradient-text">Programs</span></h2>
-            <p class="section-subtitle">Each student chooses <strong>one role track</strong> and works as that role for 3 months in a professional startup — building a real product alongside peers in other roles. One student = One track.</p>
+            <h2 class="section-title">Choose Your <span class="gradient-text">Career Track</span></h2>
+            <p class="section-subtitle">Pick the role that excites you. Each track is a 12-week intensive journey where you work as that professional role inside a real project team.</p>
         </div>
 
-        <!-- Program Cards (Summary & Skills Only) -->
-        <div class="programs-grid">
+        <div class="programs-grid student-tracks-grid">
 
             <!-- Software Engineer -->
-            <div class="program-card" id="program-se">
+            <div class="program-card student-track-card" id="track-se">
                 <div class="program-card-accent"></div>
+                <div class="track-badge-row">
+                    <span class="track-mode"><i class="fas fa-laptop-code"></i> Online & Offline</span>
+                    <span class="track-seats"><i class="fas fa-chair"></i> 60 seats</span>
+                </div>
                 <div class="program-card-header">
                     <div class="program-icon"><i class="fas fa-code"></i></div>
                     <div class="program-meta">
                         <span class="program-duration"><i class="fas fa-clock"></i> 12 Weeks</span>
-                        <span class="program-batch"><i class="fas fa-users"></i> 60 / Batch</span>
+                        <span class="program-batch"><i class="fas fa-calendar-alt"></i> Oct 30</span>
                     </div>
                 </div>
                 <h3 class="program-name">Software Engineer <span>(Full-Stack)</span></h3>
                 <p class="program-tagline">Java • Angular • PostgreSQL • Git • Docker • Jira</p>
-                <p class="program-desc">Students join a professional Scrum team and build a real web application (LMS/Portal). They pick user stories from Jira, write backend APIs in Java/Spring Boot, build Angular frontends, manage PostgreSQL databases, and deploy via Docker.</p>
-
+                <p class="program-desc">Join a Scrum team, build a real web application, write backend APIs in Java/Spring Boot, create Angular frontends, manage databases, and deploy with Docker.</p>
                 <div class="program-skills">
                     <span>Java</span><span>Spring Boot</span><span>Angular</span><span>PostgreSQL</span><span>REST API</span><span>Git</span><span>Docker</span><span>Jira</span><span>Scrum</span>
                 </div>
+                <a href="#enroll" class="track-enroll-btn"><i class="fas fa-arrow-right"></i> Enroll in This Track</a>
             </div>
 
             <!-- QA Engineer -->
-            <div class="program-card" id="program-qa">
+            <div class="program-card student-track-card" id="track-qa">
                 <div class="program-card-accent"></div>
+                <div class="track-badge-row">
+                    <span class="track-mode"><i class="fas fa-laptop-code"></i> Online & Offline</span>
+                    <span class="track-seats"><i class="fas fa-chair"></i> 60 seats</span>
+                </div>
                 <div class="program-card-header">
                     <div class="program-icon"><i class="fas fa-bug"></i></div>
                     <div class="program-meta">
                         <span class="program-duration"><i class="fas fa-clock"></i> 12 Weeks</span>
-                        <span class="program-batch"><i class="fas fa-users"></i> 60 / Batch</span>
+                        <span class="program-batch"><i class="fas fa-calendar-alt"></i> Oct 30</span>
                     </div>
                 </div>
                 <h3 class="program-name">QA Engineer <span>(Automation)</span></h3>
                 <p class="program-tagline">Playwright • Java • Git • Docker • Jira</p>
-                <p class="program-desc">Students act as the quality gate in Scrum teams. They translate requirements into test cases, execute manual and automated tests using Playwright, track bugs in Jira, and provide clear feedback to improve the product.</p>
-
+                <p class="program-desc">Be the quality gate. Translate requirements into test cases, automate testing with Playwright, track bugs in Jira, and ensure the product ships clean.</p>
                 <div class="program-skills">
                     <span>Playwright</span><span>Java</span><span>SDLC</span><span>STLC</span><span>Automation</span><span>Git</span><span>Docker</span><span>Jira</span><span>API Testing</span>
                 </div>
+                <a href="#enroll" class="track-enroll-btn"><i class="fas fa-arrow-right"></i> Enroll in This Track</a>
             </div>
 
             <!-- Data Analyst -->
-            <div class="program-card" id="program-da">
+            <div class="program-card student-track-card" id="track-da">
                 <div class="program-card-accent"></div>
+                <div class="track-badge-row">
+                    <span class="track-mode"><i class="fas fa-laptop-code"></i> Online & Offline</span>
+                    <span class="track-seats"><i class="fas fa-chair"></i> 60 seats</span>
+                </div>
                 <div class="program-card-header">
                     <div class="program-icon"><i class="fas fa-chart-bar"></i></div>
                     <div class="program-meta">
                         <span class="program-duration"><i class="fas fa-clock"></i> 12 Weeks</span>
-                        <span class="program-batch"><i class="fas fa-users"></i> 60 / Batch</span>
+                        <span class="program-batch"><i class="fas fa-calendar-alt"></i> Oct 30</span>
                     </div>
                 </div>
                 <h3 class="program-name">Data Analyst</h3>
                 <p class="program-tagline">PostgreSQL SQL • Spreadsheets • BI Tools • Git • Docker</p>
-                <p class="program-desc">Students act as the analytical brain of the professional company. They pull data from PostgreSQL, clean and transform it, build dashboards, and support decisions for product, marketing, and HR teams.</p>
-
+                <p class="program-desc">Be the analytical brain. Pull data from PostgreSQL, clean and transform datasets, build interactive dashboards, and deliver insights that drive business decisions.</p>
                 <div class="program-skills">
                     <span>SQL</span><span>PostgreSQL</span><span>BI Tools</span><span>Dashboards</span><span>Cohort Analysis</span><span>Data Cleaning</span><span>Git</span><span>Docker</span>
                 </div>
+                <a href="#enroll" class="track-enroll-btn"><i class="fas fa-arrow-right"></i> Enroll in This Track</a>
             </div>
 
             <!-- HR Specialist -->
-            <div class="program-card" id="program-hr">
+            <div class="program-card student-track-card" id="track-hr">
                 <div class="program-card-accent"></div>
+                <div class="track-badge-row">
+                    <span class="track-mode"><i class="fas fa-laptop-code"></i> Online & Offline</span>
+                    <span class="track-seats"><i class="fas fa-chair"></i> 60 seats</span>
+                </div>
                 <div class="program-card-header">
                     <div class="program-icon"><i class="fas fa-users-cog"></i></div>
                     <div class="program-meta">
                         <span class="program-duration"><i class="fas fa-clock"></i> 12 Weeks</span>
-                        <span class="program-batch"><i class="fas fa-users"></i> 60 / Batch</span>
+                        <span class="program-batch"><i class="fas fa-calendar-alt"></i> Oct 30</span>
                     </div>
                 </div>
                 <h3 class="program-name">HR Specialist</h3>
                 <p class="program-tagline">Recruitment • Onboarding • Operations • Surveys • Documentation</p>
-                <p class="program-desc">Students act as the people partner for all five tracks. They design recruitment processes, plan onboarding, manage documentation, and create a positive culture through feedback and engagement activities.</p>
-
+                <p class="program-desc">Be the people partner. Design recruitment processes, plan onboarding, manage documentation, and create a positive company culture through feedback and engagement.</p>
                 <div class="program-skills">
                     <span>Recruitment</span><span>Onboarding</span><span>HRIS</span><span>KYC</span><span>Surveys</span><span>Communication</span><span>Documentation</span>
                 </div>
+                <a href="#enroll" class="track-enroll-btn"><i class="fas fa-arrow-right"></i> Enroll in This Track</a>
             </div>
 
             <!-- Marketing Associate -->
-            <div class="program-card" id="program-mkt">
+            <div class="program-card student-track-card" id="track-mkt">
                 <div class="program-card-accent"></div>
+                <div class="track-badge-row">
+                    <span class="track-mode"><i class="fas fa-laptop-code"></i> Online & Offline</span>
+                    <span class="track-seats"><i class="fas fa-chair"></i> 60 seats</span>
+                </div>
                 <div class="program-card-header">
                     <div class="program-icon"><i class="fas fa-bullhorn"></i></div>
                     <div class="program-meta">
                         <span class="program-duration"><i class="fas fa-clock"></i> 12 Weeks</span>
-                        <span class="program-batch"><i class="fas fa-users"></i> 60 / Batch</span>
+                        <span class="program-batch"><i class="fas fa-calendar-alt"></i> Oct 30</span>
                     </div>
                 </div>
                 <h3 class="program-name">Marketing Associate</h3>
                 <p class="program-tagline">Digital & Campus Marketing • Content • Research • Analytics</p>
-                <p class="program-desc">Students help position and promote the product to students and colleges. They craft messages, design campaigns, collect feedback, and work with the Data Analyst track to understand what works best.</p>
-
+                <p class="program-desc">Position and promote the product. Craft messages, design campaigns, collect feedback, and work with the Data team to understand what resonates with your audience.</p>
                 <div class="program-skills">
                     <span>Digital Marketing</span><span>Content Creation</span><span>Canva</span><span>SEO</span><span>Social Media</span><span>Analytics</span><span>A/B Testing</span><span>Research</span>
                 </div>
+                <a href="#enroll" class="track-enroll-btn"><i class="fas fa-arrow-right"></i> Enroll in This Track</a>
             </div>
 
         </div>
     </div>
 </section>
 
-<!-- ===================== METHODOLOGY ===================== -->
-<section id="methodology" class="section section-dark">
+<!-- ===================== HOW IT WORKS ===================== -->
+<section id="how-it-works" class="section section-dark">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag"><i class="fas fa-cogs"></i> How It Works</span>
-            <h2 class="section-title">Our <span class="gradient-text">Delivery Model</span></h2>
-            <p class="section-subtitle">We don't just teach — we embed. Our instructors work on your campus, with your students, for 3 full months.</p>
+            <span class="section-tag"><i class="fas fa-route"></i> Your Journey</span>
+            <h2 class="section-title">How It <span class="gradient-text">Works</span></h2>
+            <p class="section-subtitle">From enrollment to placement — here's what your 12-week journey looks like.</p>
         </div>
 
         <div class="methodology-flow">
             <div class="method-step">
                 <div class="method-number">01</div>
                 <div class="method-content">
-                    <h4>We Deploy Instructors to Your Campus</h4>
-                    <p>Experienced Gibbs Edu Tech instructors arrive at your college and set up the professional company environment. No infrastructure changes needed from your end.</p>
+                    <h4>Pick Your Track & Enroll</h4>
+                    <p>Choose one of 5 role-based tracks. Enroll online as an individual student, or join through your partner college for an on-campus experience.</p>
                 </div>
             </div>
             <div class="method-connector"><i class="fas fa-arrow-down"></i></div>
             <div class="method-step">
                 <div class="method-number">02</div>
                 <div class="method-content">
-                    <h4>Students Choose Their Role Track</h4>
-                    <p>Students select one of the 5 tracks: Software Engineer, QA Engineer, Data Analyst, HR Specialist, or Marketing Associate. 2 batches of 60 students per program.</p>
+                    <h4>Join Your Professional Company</h4>
+                    <p>You're assigned to a cross-functional team — just like a real startup. Software Engineers, QA, Data Analysts, HR, and Marketing all work together.</p>
                 </div>
             </div>
             <div class="method-connector"><i class="fas fa-arrow-down"></i></div>
             <div class="method-step">
                 <div class="method-number">03</div>
                 <div class="method-content">
-                    <h4>Professional Company Kicks Off</h4>
-                    <p>All 5 roles work together as a real startup team — building, testing, analyzing, recruiting, and marketing a real web application over 12 weeks. Scrum ceremonies, Jira boards, Git repos, and Docker deployments — all real.</p>
+                    <h4>Build Real Projects in Sprints</h4>
+                    <p>Work in 2-week Scrum sprints. Pick Jira tickets, push code to Git, run automated tests, build dashboards, and present sprint demos — all real.</p>
                 </div>
             </div>
             <div class="method-connector"><i class="fas fa-arrow-down"></i></div>
             <div class="method-step">
                 <div class="method-number">04</div>
                 <div class="method-content">
-                    <h4>Weekly Progress & Mentorship</h4>
-                    <p>Each week has structured goals, deliverables, and mentor feedback. Students present sprint demos, QA release reports, data insights, HR summaries, and marketing campaigns.</p>
+                    <h4>Get Expert Feedback Every Week</h4>
+                    <p>Industry-experienced mentors review your work, provide code reviews, and guide your growth with weekly 1-on-1 feedback sessions.</p>
                 </div>
             </div>
             <div class="method-connector"><i class="fas fa-arrow-down"></i></div>
             <div class="method-step">
                 <div class="method-number">05</div>
                 <div class="method-content">
-                    <h4>Final Demo & Portfolio</h4>
-                    <p>Week 12 culminates in a company-wide demo where students present their work — with GitHub portfolios, QA reports, dashboards, HR summaries, and marketing decks ready for job interviews.</p>
+                    <h4>Graduate With a Portfolio</h4>
+                    <p>Week 12 ends with a company-wide demo. You leave with a GitHub portfolio, QA reports, dashboards, and marketing decks — ready for interviews.</p>
                 </div>
             </div>
             <div class="method-connector"><i class="fas fa-arrow-down"></i></div>
             <div class="method-step">
                 <div class="method-number">06</div>
                 <div class="method-content">
-                    <h4>Placement Opportunities (Months 3–6)</h4>
-                    <p>We provide active placement assistance from the 3rd to the 6th month. To be eligible, students must maintain a minimum attendance of 70% and achieve at least a 50% final overall grade. <em>Note: While we extensively facilitate interviews and preparation, placements are not guaranteed.</em></p>
+                    <h4>Placement Assistance (Months 3–6)</h4>
+                    <p>Active placement support for 3 months after the program. Maintain 70% attendance + 50% grade to qualify. We prep you and connect you with employers. <em>Placements are facilitated, not guaranteed.</em></p>
                 </div>
-            </div>
-        </div>
-
-        <div class="overview-image-section" style="margin-top: 48px;">
-            <img src="assets/images/professional_company.png" alt="Professional company environment" loading="lazy" class="overview-img">
-            <div class="overview-caption">
-                <i class="fas fa-info-circle"></i> Students working in cross-functional scrum teams — just like a real tech company
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===================== COMPARISON (GIBBS VS TRADITIONAL) ===================== -->
-<section id="comparison" class="section">
+<!-- ===================== ENROLLMENT ===================== -->
+<section id="enroll" class="section">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag"><i class="fas fa-balance-scale"></i> Value Comparison</span>
-            <h2 class="section-title">Gibbs Edu Tech vs <span class="gradient-text">Traditional Training</span></h2>
-            <p class="section-subtitle">Evaluating the educational and placement impact across methodologies.</p>
+            <span class="section-tag"><i class="fas fa-user-plus"></i> Start Your Journey</span>
+            <h2 class="section-title">Choose How You <span class="gradient-text">Want to Learn</span></h2>
+            <p class="section-subtitle">Two ways to join the program — pick the path that works best for you.</p>
         </div>
 
-        <div class="comparison-table-wrapper">
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th class="highlight-col"><i class="fas fa-crown"></i> Gibbs Edu Tech</th>
-                        <th>Traditional Workshops</th>
-                        <th>Online Courses</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Duration</td>
-                        <td class="highlight-col"><strong>3 months continuous</strong></td>
-                        <td>1–5 days</td>
-                        <td>Self-paced (often abandoned)</td>
-                    </tr>
-                    <tr>
-                        <td>On-Campus Instructors</td>
-                        <td class="highlight-col"><i class="fas fa-check-circle check"></i> Full-time embedded</td>
-                        <td><i class="fas fa-check-circle check"></i> Brief visit</td>
-                        <td><i class="fas fa-times-circle cross"></i> None</td>
-                    </tr>
-                    <tr>
-                        <td>Real Project Experience</td>
-                        <td class="highlight-col"><i class="fas fa-check-circle check"></i> Build full product</td>
-                        <td><i class="fas fa-times-circle cross"></i> Toy examples</td>
-                        <td><i class="fas fa-minus-circle neutral"></i> Limited exercises</td>
-                    </tr>
-                    <tr>
-                        <td>Cross-Functional Teams</td>
-                        <td class="highlight-col"><i class="fas fa-check-circle check"></i> 5 roles collaborate</td>
-                        <td><i class="fas fa-times-circle cross"></i> No</td>
-                        <td><i class="fas fa-times-circle cross"></i> No</td>
-                    </tr>
-                    <tr>
-                        <td>Industry Tools (Git, Docker, Jira)</td>
-                        <td class="highlight-col"><i class="fas fa-check-circle check"></i> Daily use</td>
-                        <td><i class="fas fa-minus-circle neutral"></i> Demo only</td>
-                        <td><i class="fas fa-minus-circle neutral"></i> Some</td>
-                    </tr>
-                    <tr>
-                        <td>Portfolio & Demo Ready</td>
-                        <td class="highlight-col"><i class="fas fa-check-circle check"></i> GitHub + Demos</td>
-                        <td><i class="fas fa-times-circle cross"></i> Certificate only</td>
-                        <td><i class="fas fa-minus-circle neutral"></i> Partial</td>
-                    </tr>
-                    <tr>
-                        <td>Student Engagement</td>
-                        <td class="highlight-col"><strong>Very High</strong> (role ownership)</td>
-                        <td>Low (passive learning)</td>
-                        <td>Very Low (high dropout)</td>
-                    </tr>
-                    <tr>
-                        <td>Placement Readiness</td>
-                        <td class="highlight-col"><i class="fas fa-check-circle check"></i> <strong>Interview-ready</strong></td>
-                        <td><i class="fas fa-times-circle cross"></i> Minimal impact</td>
-                        <td><i class="fas fa-minus-circle neutral"></i> Depends on effort</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== WHY US ===================== -->
-<section id="why-us" class="section section-dark">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag"><i class="fas fa-trophy"></i> Our Differentiators</span>
-            <h2 class="section-title">Why Partner With <span class="gradient-text">Gibbs Edu Tech</span></h2>
-        </div>
-        <div class="why-grid">
-            <div class="why-card">
-                <div class="why-number">01</div>
-                <h4>On-Campus Embedding</h4>
-                <p>We don't send links or videos. We send <strong>instructors</strong> who work from your classrooms for 3 full months, fully embedded in your ecosystem.</p>
-            </div>
-            <div class="why-card">
-                <div class="why-number">02</div>
-                <h4>Professional Company Model</h4>
-                <p>Students don't just learn — they <strong>work</strong>. They join cross-functional teams, use Jira, do code reviews, run QA cycles, build dashboards, and run marketing campaigns.</p>
-            </div>
-            <div class="why-card">
-                <div class="why-number">03</div>
-                <h4>Zero Infrastructure Needed</h4>
-                <p>We bring everything — curriculum, tools, instructors. The college just provides classroom space and students. We handle the rest.</p>
-            </div>
-            <div class="why-card">
-                <div class="why-number">04</div>
-                <h4>Portfolio-First Outcomes</h4>
-                <p>Every student leaves with a <strong>GitHub portfolio</strong>, demo recordings, and real artifacts they can show in job interviews. Not just a certificate.</p>
-            </div>
-            <div class="why-card">
-                <div class="why-number">05</div>
-                <h4>Multi-Track Coverage</h4>
-                <p>5 role tracks cover the full spectrum — from tech (SE, QA, Data) to business (HR, Marketing). Something for <strong>every department</strong> at your college.</p>
-            </div>
-            <div class="why-card">
-                <div class="why-number">06</div>
-                <h4>Placement Amplifier</h4>
-                <p>Our graduates are <strong>interview-ready from Day 1</strong> — with real project experience, teamwork skills, and industry tool proficiency that recruiters look for.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== BENEFITS ===================== -->
-<section id="benefits" class="section">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag"><i class="fas fa-gift"></i> Value for Your College</span>
-            <h2 class="section-title">What Your College <span class="gradient-text">Gains</span></h2>
-        </div>
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
-                <h4>Higher Placement Rates</h4>
-                <p>Industry-ready students attract better companies and get placed faster — boosting your college's placement statistics.</p>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon"><i class="fas fa-bullhorn"></i></div>
-                <h4>Marketing Differentiator</h4>
-                <p>"3-month industry immersion program" becomes a powerful USP for attracting new admissions vs competing colleges.</p>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon"><i class="fas fa-handshake"></i></div>
-                <h4>Zero Operational Burden</h4>
-                <p>We handle everything — instructors, curriculum, tools, assessments. Your college provides space and students.</p>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon"><i class="fas fa-users"></i></div>
-                <h4>Student Satisfaction</h4>
-                <p>Students feel they're getting real-world value from their college — increasing retention and positive word-of-mouth.</p>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon"><i class="fas fa-graduation-cap"></i></div>
-                <h4>Curriculum Enhancement</h4>
-                <p>Complements the university syllabus with industry-relevant skills without changing your academic program structure.</p>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon"><i class="fas fa-certificate"></i></div>
-                <h4>Gibbs Certification</h4>
-                <p>Students receive an industry-recognized program certificate from Gibbs Edu Tech — adding credibility to their resume.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===================== CONTACT / CTA ===================== -->
-<section id="contact" class="section section-dark">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag"><i class="fas fa-rocket"></i> Next Steps</span>
-            <h2 class="section-title">Let's Start <span class="gradient-text">This Partnership</span></h2>
-            <p class="section-subtitle">We're excited to bring the Gibbs Edu Tech experience to your institution. Let's discuss the details.</p>
-        </div>
-
-        <div class="cta-grid">
-            <div class="cta-steps">
-                <h3>Proposed Next Steps</h3>
-                <div class="cta-step">
-                    <div class="cta-step-num">1</div>
-                    <div>
-                        <h4>Schedule a Meeting</h4>
-                        <p>30-minute introductory call with college leadership to discuss goals, preferred tracks, and timeline.</p>
-                    </div>
+        <div class="enroll-options-grid">
+            <!-- Online / Individual -->
+            <div class="enroll-card enroll-online">
+                <div class="enroll-card-glow"></div>
+                <div class="enroll-icon-wrap">
+                    <div class="enroll-icon"><i class="fas fa-laptop"></i></div>
                 </div>
-                <div class="cta-step">
-                    <div class="cta-step-num">2</div>
-                    <div>
-                        <h4>7-14 Days Onboarding Period</h4>
-                        <p>We work closely with your institution to integrate our programs and prepare for launch.</p>
-                    </div>
+                <div class="enroll-badge">Online</div>
+                <h3>Enroll as Individual</h3>
+                <p class="enroll-desc">Learn from anywhere. Join our live online program with expert instructors, real project work, and full mentorship — no college affiliation needed.</p>
+                <ul class="enroll-features">
+                    <li><i class="fas fa-check-circle"></i> Live online classes with instructors</li>
+                    <li><i class="fas fa-check-circle"></i> Same curriculum & real project experience</li>
+                    <li><i class="fas fa-check-circle"></i> Flexible — attend from home</li>
+                    <li><i class="fas fa-check-circle"></i> Cross-functional team collaboration</li>
+                    <li><i class="fas fa-check-circle"></i> Portfolio + Gibbs certification</li>
+                    <li><i class="fas fa-check-circle"></i> Placement assistance included</li>
+                </ul>
+                <div class="enroll-batch-info">
+                    <span><i class="fas fa-calendar"></i> First Batch: October 30, 2026</span>
+                    <span><i class="fas fa-chair"></i> <strong>60</strong> seats remaining</span>
                 </div>
-                <div class="cta-step">
-                    <div class="cta-step-num">3</div>
-                    <div>
-                        <h4>Program Start</h4>
-                        <p>Begin the selected tracks and give your students the professional company experience.</p>
-                    </div>
-                </div>
-                <div class="contact-direct-info" style="margin-top: 32px; padding: 24px; border-radius: var(--border-radius-sm); background: rgba(67, 198, 172, 0.05); border: 1px solid rgba(67, 198, 172, 0.15);">
-                    <h4 style="font-family: var(--font-accent); color: var(--text-white); margin-bottom: 16px;"><i class="fas fa-address-book" style="color: var(--primary); margin-right: 8px;"></i>Direct Contact Details</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 8px; display: flex; align-items: center; gap: 10px;">
-                        <i class="fas fa-envelope" style="color: var(--primary);"></i>
-                        <span>Email: <a href="mailto:gibbsedutech@gmail.com" style="color: var(--primary-light); font-weight: 500;">gibbsedutech@gmail.com</a></span>
-                    </p>
-                    <p style="font-size: 0.9rem; color: var(--text-light); display: flex; align-items: center; gap: 10px;">
-                        <i class="fas fa-phone-alt" style="color: var(--primary);"></i>
-                        <span>Phone: <a href="tel:+919171647365" style="color: var(--primary-light); font-weight: 500;">+91 91716 47365</a></span>
-                    </p>
-                </div>
+                <a href="#" class="btn btn-primary enroll-cta"><i class="fas fa-arrow-right"></i> Enroll Online — Individual</a>
             </div>
 
-            <div class="contact-form-wrapper">
-                <form id="enquiryForm" class="contact-form">
-                    <h3><i class="fas fa-paper-plane"></i> Express Interest</h3>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="fullName">Your Name *</label>
-                            <input type="text" id="fullName" placeholder="Contact person name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="designation">Designation</label>
-                            <input type="text" id="designation" placeholder="e.g. Principal, Director">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" placeholder="Enter email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone *</label>
-                            <input type="tel" id="phone" placeholder="Phone number" required>
-                        </div>
-                    </div>
-                    <div class="form-group custom-multi-select">
-                        <label>Tracks Interested In</label>
-                        <div class="multi-select-box" id="multiSelectBox">
-                            <div class="multi-select-value">Select preferred tracks...</div>
-                            <i class="fas fa-chevron-down multi-select-icon"></i>
-                        </div>
-                        <div class="multi-select-dropdown" id="multiSelectDropdown" style="display: none;">
-                            <label><input type="checkbox" value="Software Engineer (Full-Stack)"> Software Engineer (Full-Stack)</label>
-                            <label><input type="checkbox" value="QA Engineer (Automation)"> QA Engineer (Automation)</label>
-                            <label><input type="checkbox" value="Data Analyst"> Data Analyst</label>
-                            <label><input type="checkbox" value="HR Specialist"> HR Specialist</label>
-                            <label><input type="checkbox" value="Marketing Associate"> Marketing Associate</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message / Questions</label>
-                        <textarea id="message" rows="4" placeholder="Any specific questions or preferred start date..."></textarea>
-                    </div>
-                    <div style="display: flex; gap: 16px; margin-top: 16px; flex-wrap: wrap;">
-                        <button type="submit" name="submitType" value="email" class="btn btn-primary" style="flex: 1; min-width: 200px;"><i class="fas fa-envelope"></i> Send via Email</button>
-                        <button type="submit" name="submitType" value="whatsapp" class="btn btn-primary" style="flex: 1; min-width: 200px; background: #25D366; border-color: #25D366;"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
-                    </div>
-                </form>
+            <!-- Offline / Partner College -->
+            <div class="enroll-card enroll-offline">
+                <div class="enroll-card-glow"></div>
+                <div class="enroll-icon-wrap">
+                    <div class="enroll-icon"><i class="fas fa-university"></i></div>
+                </div>
+                <div class="enroll-badge badge-campus">On-Campus</div>
+                <h3>Enroll via Partner College</h3>
+                <p class="enroll-desc">Experience immersive, on-campus training at your college. Our instructors come to your campus for 3 months — the full professional company experience.</p>
+                <ul class="enroll-features">
+                    <li><i class="fas fa-check-circle"></i> In-person instructors on your campus</li>
+                    <li><i class="fas fa-check-circle"></i> Full professional company setup</li>
+                    <li><i class="fas fa-check-circle"></i> Face-to-face mentorship & collaboration</li>
+                    <li><i class="fas fa-check-circle"></i> Work with your college peers</li>
+                    <li><i class="fas fa-check-circle"></i> Portfolio + Gibbs certification</li>
+                    <li><i class="fas fa-check-circle"></i> Placement assistance included</li>
+                </ul>
+                <div class="enroll-batch-info">
+                    <span><i class="fas fa-calendar"></i> First Batch: October 30, 2026</span>
+                    <span><i class="fas fa-chair"></i> <strong>60</strong> seats remaining</span>
+                </div>
+                <a href="#" class="btn btn-primary enroll-cta"><i class="fas fa-arrow-right"></i> Enroll via Partner College</a>
             </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="enroll-note animate-fade-up">
+            <i class="fas fa-info-circle"></i>
+            <p>Both enrollment paths lead to the same high-quality program, same curriculum, and same certification. The only difference is your learning environment — online from home, or on-campus at a partner college.</p>
         </div>
     </div>
 </section>
@@ -593,11 +410,11 @@
                 <a href="index.html" class="nav-logo" style="display: inline-block; margin-bottom: 8px;">
                     <img src="assets/images/logo.png" alt="Gibbs Edu Tech Logo" class="logo-img">
                 </a>
-                <p class="footer-desc">Transforming education with immersive, on-campus, role-based training programs. We embed instructors, replicate professional company environments, and produce job-ready graduates.</p>
+                <p class="footer-desc">Transforming education with immersive, role-based training programs. We replicate professional company environments and produce job-ready graduates — online and on-campus.</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Gibbs Edu Tech. All rights reserved. | <a href="rental.html" style="color: var(--primary-light); opacity: 0.7; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'"><i class="fas fa-lock" style="font-size: 0.7em; margin-right: 4px;"></i>Institutional Portal</a></p>
+            <p>&copy; 2026 Gibbs Edu Tech. All rights reserved. | <a href="partnership.html" style="color: var(--primary-light); opacity: 0.7; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'"><i class="fas fa-handshake" style="font-size: 0.7em; margin-right: 4px;"></i>College Partnership Program</a></p>
         </div>
     </div>
 </footer>
@@ -606,5 +423,6 @@
 <button id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
 <script src="assets/js/script.js"></script>
+<script src="assets/js/student.js"></script>
 </body>
 </html>

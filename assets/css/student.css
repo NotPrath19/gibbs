@@ -1,0 +1,585 @@
+/* ===========================
+   GIBBS EDU TECH — STUDENT PAGE
+   Additional Styles
+   =========================== */
+
+/* --- Hero Urgency Row (Countdown + Seats) --- */
+.hero-urgency-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 32px auto;
+    max-width: 800px;
+    flex-wrap: wrap;
+}
+
+.countdown-box {
+    background: rgba(67, 198, 172, 0.08);
+    border: 1px solid rgba(67, 198, 172, 0.2);
+    border-radius: var(--border-radius);
+    padding: 24px 32px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+}
+
+.countdown-label {
+    font-family: var(--font-accent);
+    font-size: 0.85rem;
+    color: var(--primary-light);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.countdown-timer {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.countdown-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 56px;
+}
+
+.cd-num {
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(67, 198, 172, 0.12);
+    border: 1px solid rgba(67, 198, 172, 0.25);
+    border-radius: 10px;
+    padding: 8px 12px;
+    min-width: 52px;
+    text-align: center;
+    line-height: 1;
+}
+
+.cd-label {
+    font-family: var(--font-accent);
+    font-size: 0.65rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 6px;
+}
+
+.countdown-sep {
+    font-family: var(--font-mono);
+    font-size: 1.8rem;
+    color: var(--primary);
+    font-weight: 700;
+    margin: 0 2px;
+    animation: pulse-sep 1s ease-in-out infinite;
+}
+
+@keyframes pulse-sep {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* --- Seats Circle --- */
+.seats-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.seats-circle {
+    position: relative;
+    width: 110px;
+    height: 110px;
+}
+
+.seats-ring {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.seats-ring-bg {
+    fill: none;
+    stroke: rgba(67, 198, 172, 0.12);
+    stroke-width: 6;
+}
+
+.seats-ring-fill {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-dasharray: 326.73;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 0 8px rgba(67, 198, 172, 0.5));
+}
+
+.seats-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.seats-count {
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+}
+
+.seats-label {
+    font-family: var(--font-accent);
+    font-size: 0.6rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+.seats-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.seats-tag {
+    font-family: var(--font-accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.seats-tag i {
+    animation: fire-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes fire-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.seats-sub {
+    font-size: 0.75rem;
+    color: var(--text-light);
+}
+
+/* --- Track Badge Row --- */
+.track-badge-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(67, 198, 172, 0.1);
+}
+
+.track-mode,
+.track-seats {
+    font-family: var(--font-accent);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(67, 198, 172, 0.08);
+    color: var(--primary-light);
+    border: 1px solid rgba(67, 198, 172, 0.15);
+}
+
+.track-seats {
+    background: rgba(247, 183, 51, 0.08);
+    color: var(--accent);
+    border-color: rgba(247, 183, 51, 0.15);
+}
+
+/* --- Track Enroll Button --- */
+.track-enroll-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-accent);
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--primary);
+    padding: 10px 20px;
+    border: 1px solid rgba(67, 198, 172, 0.25);
+    border-radius: 8px;
+    margin-top: 16px;
+    text-decoration: none;
+    transition: all var(--transition-med);
+    background: rgba(67, 198, 172, 0.05);
+}
+
+.track-enroll-btn:hover {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+    transform: translateX(4px);
+    box-shadow: 0 4px 16px rgba(67, 198, 172, 0.3);
+}
+
+.track-enroll-btn i {
+    transition: transform var(--transition-med);
+}
+
+.track-enroll-btn:hover i {
+    transform: translateX(4px);
+}
+
+/* --- Student Track Card adjustments --- */
+.student-track-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.student-track-card .track-enroll-btn {
+    margin-top: auto;
+}
+
+/* --- Value Grid (What You Get) --- */
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.value-card {
+    background: var(--bg-card-dark);
+    border: 1px solid var(--border-dark);
+    border-radius: var(--border-radius);
+    padding: 32px 28px;
+    transition: all var(--transition-med);
+    position: relative;
+    overflow: hidden;
+}
+
+.value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity var(--transition-med);
+}
+
+.value-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(67, 198, 172, 0.25);
+    box-shadow: 0 12px 40px rgba(67, 198, 172, 0.1);
+}
+
+.value-card:hover::before {
+    opacity: 1;
+}
+
+.value-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: rgba(67, 198, 172, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    transition: all var(--transition-med);
+}
+
+.value-card:hover .value-icon {
+    background: var(--primary);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.value-card h4 {
+    font-family: var(--font-accent);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text-white);
+    margin-bottom: 10px;
+}
+
+.value-card p {
+    font-size: 0.88rem;
+    color: var(--text-light);
+    line-height: 1.65;
+}
+
+/* --- Enrollment Options Grid --- */
+.enroll-options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.enroll-card {
+    position: relative;
+    background: var(--bg-white);
+    border: 2px solid rgba(67, 198, 172, 0.12);
+    border-radius: var(--border-radius);
+    padding: 40px 32px 32px;
+    transition: all var(--transition-med);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.enroll-card-glow {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(67, 198, 172, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    transition: opacity var(--transition-med);
+}
+
+.enroll-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(67, 198, 172, 0.35);
+    box-shadow: 0 16px 48px rgba(67, 198, 172, 0.12);
+}
+
+.enroll-card:hover .enroll-card-glow {
+    opacity: 1.5;
+}
+
+.enroll-icon-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.enroll-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(67, 198, 172, 0.15), rgba(25, 22, 84, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: var(--primary);
+    border: 2px solid rgba(67, 198, 172, 0.2);
+    transition: all var(--transition-med);
+}
+
+.enroll-card:hover .enroll-icon {
+    background: var(--gradient-primary);
+    color: #fff;
+    border-color: transparent;
+    transform: scale(1.08);
+    box-shadow: 0 8px 24px rgba(67, 198, 172, 0.3);
+}
+
+.enroll-badge {
+    display: inline-block;
+    font-family: var(--font-accent);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--primary);
+    background: rgba(67, 198, 172, 0.08);
+    border: 1px solid rgba(67, 198, 172, 0.2);
+    border-radius: 20px;
+    padding: 5px 14px;
+    margin: 0 auto 16px;
+    text-align: center;
+    width: fit-content;
+}
+
+.badge-campus {
+    color: var(--accent);
+    background: rgba(247, 183, 51, 0.08);
+    border-color: rgba(247, 183, 51, 0.2);
+}
+
+.enroll-card h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.enroll-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-align: center;
+    line-height: 1.65;
+    margin-bottom: 20px;
+}
+
+.enroll-features {
+    list-style: none;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.enroll-features li {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    padding: 6px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.enroll-features li:last-child {
+    border-bottom: none;
+}
+
+.enroll-features i {
+    color: var(--primary);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.enroll-batch-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: rgba(67, 198, 172, 0.04);
+    border: 1px solid rgba(67, 198, 172, 0.1);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+}
+
+.enroll-batch-info span {
+    font-family: var(--font-accent);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.enroll-batch-info i {
+    color: var(--primary);
+    width: 16px;
+    text-align: center;
+}
+
+.enroll-batch-info strong {
+    color: var(--primary-dark);
+}
+
+.enroll-cta {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 14px 24px;
+    font-size: 0.95rem;
+}
+
+/* --- Enroll Note --- */
+.enroll-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    max-width: 760px;
+    margin: 40px auto 0;
+    padding: 20px 24px;
+    background: rgba(67, 198, 172, 0.04);
+    border: 1px solid rgba(67, 198, 172, 0.12);
+    border-radius: var(--border-radius-sm);
+}
+
+.enroll-note > i {
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.enroll-note p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .hero-urgency-row {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .value-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .enroll-options-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+}
+
+@media (max-width: 640px) {
+    .value-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .countdown-box {
+        padding: 18px 20px;
+    }
+
+    .cd-num {
+        font-size: 1.5rem;
+        padding: 6px 8px;
+        min-width: 40px;
+    }
+
+    .countdown-sep {
+        font-size: 1.3rem;
+    }
+
+    .seats-circle {
+        width: 90px;
+        height: 90px;
+    }
+
+    .seats-count {
+        font-size: 1.5rem;
+    }
+
+    .track-badge-row {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+}
