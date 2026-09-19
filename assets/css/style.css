@@ -931,6 +931,27 @@ ul { list-style: none; }
     border-color: var(--primary);
 }
 
+.program-skills span.skill-ai {
+    background: linear-gradient(135deg, rgba(247, 183, 51, 0.14) 0%, rgba(67, 198, 172, 0.14) 100%);
+    color: #854d0e;
+    border: 1px solid rgba(247, 183, 51, 0.5);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.program-skills span.skill-ai i {
+    color: #d97706;
+    font-size: 0.72rem;
+}
+
+.program-skills span.skill-ai:hover {
+    background: linear-gradient(135deg, #f7b733 0%, #43c6ac 100%);
+    color: #0c0e1a;
+    border-color: transparent;
+}
+
 /* ===================== METHODOLOGY ===================== */
 .methodology-flow {
     max-width: 700px;
