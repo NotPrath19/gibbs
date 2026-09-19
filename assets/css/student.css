@@ -332,11 +332,14 @@
 
 /* --- Enrollment Options Grid --- */
 .enroll-options-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-    max-width: 960px;
+    display: flex;
+    justify-content: center;
+    max-width: 540px;
     margin: 0 auto;
+}
+
+.enroll-options-grid .enroll-card {
+    width: 100%;
 }
 
 .enroll-card {
