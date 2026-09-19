@@ -596,7 +596,7 @@
 /* --- Track Curriculum Breakdown --- */
 .track-curriculum {
     margin-top: 16px;
-    border-top: 1px solid rgba(67, 198, 172, 0.1);
+    border-top: 1px solid rgba(67, 198, 172, 0.15);
     padding-top: 14px;
 }
 
@@ -604,7 +604,7 @@
     font-family: var(--font-accent);
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--primary-light);
+    color: var(--primary-dark);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -653,15 +653,15 @@
     align-items: center;
     gap: 12px;
     padding: 10px 14px;
-    background: rgba(67, 198, 172, 0.04);
-    border: 1px solid rgba(67, 198, 172, 0.08);
+    background: rgba(67, 198, 172, 0.06);
+    border: 1px solid rgba(67, 198, 172, 0.12);
     border-radius: 8px;
     transition: all var(--transition-fast);
 }
 
 .week-block:hover {
-    background: rgba(67, 198, 172, 0.08);
-    border-color: rgba(67, 198, 172, 0.15);
+    background: rgba(67, 198, 172, 0.12);
+    border-color: rgba(67, 198, 172, 0.25);
 }
 
 .week-label {
@@ -682,7 +682,7 @@
 .week-topic {
     font-family: var(--font-body);
     font-size: 0.82rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-secondary);
     line-height: 1.4;
 }
 
@@ -690,15 +690,15 @@
 .track-seat-tracker {
     margin-top: 16px;
     padding: 14px 16px;
-    background: rgba(247, 183, 51, 0.04);
-    border: 1px solid rgba(247, 183, 51, 0.12);
+    background: rgba(247, 183, 51, 0.06);
+    border: 1px solid rgba(247, 183, 51, 0.15);
     border-radius: 10px;
 }
 
 .track-seat-bar {
     width: 100%;
     height: 8px;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(0, 0, 0, 0.06);
     border-radius: 4px;
     overflow: hidden;
     margin-bottom: 8px;
@@ -739,7 +739,7 @@
     font-family: var(--font-accent);
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--accent);
+    color: var(--primary-dark);
     display: flex;
     align-items: center;
     gap: 6px;
@@ -747,11 +747,12 @@
 
 .track-seat-count i {
     font-size: 0.75rem;
+    color: var(--accent);
 }
 
 .track-seat-count strong {
     font-family: var(--font-mono);
-    color: var(--accent-light);
+    color: var(--primary-dark);
 }
 
 .track-seat-total {
