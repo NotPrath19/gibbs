@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gibbs Edu Tech — College Partnership Proposal</title>
     <meta name="description" content="Formal proposal from Gibbs Edu Tech — 3-month immersive industry-ready training programs with on-campus instructors.">
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="assets/images/gibbs-icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" type="image/png" href="assets/images/gibbs-icon.png">
 </head>
 <body>
 
@@ -26,9 +25,13 @@
             <li><a href="#comparison">Comparison</a></li>
             <li><a href="#why-us">Why Us</a></li>
             <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#register"><i class="fas fa-user-graduate" style="font-size:0.85em; margin-right:4px;"></i> Register</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <a href="#contact" class="nav-cta">Let's Partner</a>
+        <div class="nav-actions">
+            <a href="#register" class="nav-register-btn"><i class="fas fa-user-graduate"></i> Register</a>
+            <a href="#contact" class="nav-cta">Let's Partner</a>
+        </div>
         <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
             <span></span><span></span><span></span>
         </button>
@@ -68,17 +71,21 @@
             </div>
         </div>
 
-        <div class="animate-fade-up delay-3" style="background: rgba(67, 198, 172, 0.15); border: 1px solid rgba(67, 198, 172, 0.3); padding: 16px 24px; border-radius: 12px; margin: 0 auto 32px auto; max-width: 800px; text-align: center;">
-            <h4 style="color: var(--primary-light); font-family: var(--font-accent); margin-bottom: 8px;"><i class="fas fa-user-graduate"></i> Placement Opportunities (Months 3 – 6)</h4>
-            <p style="color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">We provide active placement assistance from the 3rd to the 6th month. To be eligible, students must maintain a minimum attendance of 70% and achieve a final overall grade of at least 50%. <br><em style="font-size: 0.85rem; color: rgba(255,255,255,0.6);">Please note: While we actively facilitate opportunities and prepare students for interviews, placements are not guaranteed.</em></p>
+        <div class="animate-fade-up delay-3" style="background: rgba(67, 198, 172, 0.15); border: 1px solid rgba(67, 198, 172, 0.3); padding: 14px 22px; border-radius: 12px; margin: 0 auto 24px auto; max-width: 800px; text-align: center;">
+            <h4 style="color: var(--primary-light); font-family: var(--font-accent); margin-bottom: 6px; font-size: 0.98rem;"><i class="fas fa-user-graduate"></i> Placement Opportunities (Months 3 – 6)</h4>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.45; margin-bottom: 0;">We provide active placement assistance from the 3rd to the 6th month. To be eligible, students must maintain a minimum attendance of 70% and achieve a final overall grade of at least 50%. <br><em style="font-size: 0.82rem; color: rgba(255,255,255,0.6);">Please note: While we actively facilitate opportunities and prepare students for interviews, placements are not guaranteed.</em></p>
         </div>
 
         <div class="hero-buttons animate-fade-up delay-4">
             <a href="#programs" class="btn btn-primary"><i class="fas fa-rocket"></i> View Programs</a>
             <a href="#comparison" class="btn btn-outline"><i class="fas fa-balance-scale"></i> Compare Value</a>
+            <a href="#register" class="btn-register-quick"><i class="fas fa-user-graduate"></i> Register</a>
+        </div>
+        <div class="hero-quick-reg animate-fade-up delay-4">
+            <i class="fas fa-university"></i> Partner college student? <a href="#register">Register for your on-campus batch &rarr;</a>
         </div>
     </div>
-    <div class="scroll-indicator animate-fade-up delay-5">
+    <div class="scroll-indicator animate-fade-up delay-5" onclick="document.getElementById('prepared-for').scrollIntoView({behavior:'smooth'})">
         <div class="mouse"><div class="mouse-wheel"></div></div>
         <span>Scroll to explore proposal</span>
     </div>
@@ -483,6 +490,48 @@
                 <div class="benefit-icon"><i class="fas fa-certificate"></i></div>
                 <h4>Gibbs Certification</h4>
                 <p>Students receive an industry-recognized program certificate from Gibbs Edu Tech — adding credibility to their resume.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== ENROLL VIA PARTNER COLLEGE (STUDENT REGISTRATION) ===================== -->
+<section id="register" class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag"><i class="fas fa-university"></i> Student Registration</span>
+            <h2 class="section-title">Enroll via <span class="gradient-text">Partner College</span></h2>
+            <p class="section-subtitle">Only students of partner colleges are able to register for this program. 3-month immersive on-campus industry training at your institution.</p>
+        </div>
+
+        <div class="partner-enroll-wrapper">
+            <div class="enroll-card-dark animate-fade-up">
+                <div class="enroll-card-glow"></div>
+                <div class="enroll-icon-wrap">
+                    <div class="enroll-icon"><i class="fas fa-university"></i></div>
+                </div>
+                <div class="enroll-badge">Partner College Students Only</div>
+                <h3>Enroll via Partner College</h3>
+                <p class="enroll-desc">Experience immersive, on-campus training at your college. Our instructors come to your campus for 3 months — the full professional company experience.</p>
+                <ul class="enroll-features">
+                    <li><i class="fas fa-check-circle"></i> Exclusively for students of enrolled partner colleges</li>
+                    <li><i class="fas fa-check-circle"></i> In-person instructors on your college campus</li>
+                    <li><i class="fas fa-check-circle"></i> Full professional company setup (SWE, QA, Data, HR, Marketing)</li>
+                    <li><i class="fas fa-check-circle"></i> Face-to-face mentorship & peer collaboration</li>
+                    <li><i class="fas fa-check-circle"></i> GitHub portfolio + Gibbs certification</li>
+                    <li><i class="fas fa-check-circle"></i> Interview opportunities with hiring companies (Months 3–6)</li>
+                </ul>
+                <div class="enroll-batch-info">
+                    <span><i class="fas fa-calendar-alt"></i> First Batch: <strong>October 30, 2026</strong></span>
+                    <span><i class="fas fa-shield-alt"></i> Requires valid partner college student ID / enrollment</span>
+                </div>
+                <!-- Navigates to Razorpay page -->
+                <a href="#" class="enroll-cta"><i class="fas fa-arrow-right"></i> Register — Partner College</a>
+            </div>
+
+            <div class="partner-reg-alt-box" style="margin-top: 24px; text-align: center;">
+                <h5><i class="fas fa-info-circle"></i> Not a student at a partner college?</h5>
+                <p>Online individual enrollment is open to all students nationwide! <a href="index.html#enroll">Enroll as Individual (Online) &rarr;</a></p>
             </div>
         </div>
     </div>

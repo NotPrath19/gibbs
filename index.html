@@ -20,9 +20,12 @@
             <img src="assets/images/logo.png" alt="Gibbs Edu Tech Logo" class="logo-img">
         </a>
         <ul class="nav-links">
-            <!-- Navigation intentionally minimal — pages don't exist yet -->
+            <li><a href="partnership.html#register"><i class="fas fa-user-graduate" style="font-size:0.85em; margin-right:4px;"></i> Partner College Register</a></li>
         </ul>
-        <a href="partnership.html" class="nav-cta"><i class="fas fa-handshake"></i> College Partnership Program</a>
+        <div class="nav-actions">
+            <a href="partnership.html#register" class="nav-register-btn"><i class="fas fa-user-graduate"></i> Partner College Register</a>
+            <a href="partnership.html" class="nav-cta"><i class="fas fa-handshake"></i> College Partnership Program</a>
+        </div>
         <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
             <span></span><span></span><span></span>
         </button>
@@ -78,7 +81,7 @@
             <a href="#enroll" class="btn btn-outline"><i class="fas fa-user-plus"></i> Enroll Now</a>
         </div>
     </div>
-    <div class="scroll-indicator animate-fade-up delay-5">
+    <div class="scroll-indicator animate-fade-up delay-5" onclick="document.getElementById('what-you-get').scrollIntoView({behavior:'smooth'})">
         <div class="mouse"><div class="mouse-wheel"></div></div>
         <span>Scroll to explore programs</span>
     </div>
@@ -478,10 +481,11 @@
                 <div class="enroll-icon-wrap">
                     <div class="enroll-icon"><i class="fas fa-university"></i></div>
                 </div>
-                <div class="enroll-badge badge-campus">On-Campus</div>
+                <div class="enroll-badge badge-campus">Partner College Students Only</div>
                 <h3>Enroll via Partner College</h3>
-                <p class="enroll-desc">Experience immersive, on-campus training at your college. Our instructors come to your campus for 3 months — the full professional company experience.</p>
+                <p class="enroll-desc">Exclusively for students enrolled at our affiliated partner institutions. Experience immersive, on-campus training with dedicated Gibbs instructors right at your college.</p>
                 <ul class="enroll-features">
+                    <li><i class="fas fa-check-circle"></i> Exclusively for enrolled partner students</li>
                     <li><i class="fas fa-check-circle"></i> In-person instructors on your campus</li>
                     <li><i class="fas fa-check-circle"></i> Full professional company setup</li>
                     <li><i class="fas fa-check-circle"></i> Face-to-face mentorship & collaboration</li>
@@ -492,14 +496,14 @@
                 <div class="enroll-batch-info">
                     <span><i class="fas fa-calendar"></i> First Batch: October 30, 2026</span>
                 </div>
-                <a href="#" class="btn btn-primary enroll-cta"><i class="fas fa-arrow-right"></i> Enroll via Partner College</a>
+                <a href="partnership.html#register" class="btn btn-outline enroll-cta"><i class="fas fa-university"></i> Register via Partner College &rarr;</a>
             </div>
         </div>
 
         <!-- Additional Info -->
         <div class="enroll-note animate-fade-up">
             <i class="fas fa-info-circle"></i>
-            <p>Both enrollment paths lead to the same high-quality program, same curriculum, and same certification. The only difference is your learning environment — online from home, or on-campus at a partner college.</p>
+            <p><strong>Note:</strong> Online individual enrollment is open to all students nationwide. On-campus enrollment is exclusively available to students attending active Gibbs Edu Tech partner colleges & universities.</p>
         </div>
     </div>
 </section>
