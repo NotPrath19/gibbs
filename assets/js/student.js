@@ -1,6 +1,6 @@
 /* ===========================
    GIBBS EDU TECH — STUDENT PAGE JS
-   Countdown, Seats Animation, Interactions
+   Countdown, Per-Track Seats, Curriculum Toggle
    =========================== */
 
 function initStudentPage() {
@@ -42,37 +42,38 @@ function initStudentPage() {
         setInterval(updateCountdown, 1000);
     }
 
-    // --- Seats Ring Animation ---
-    const seatsRingFill = document.getElementById('seatsRingFill');
-    const seatsCountEl = document.getElementById('seatsCount');
+    // --- Per-Track Seat Trackers ---
+    const trackSeatTrackers = document.querySelectorAll('.track-seat-tracker');
 
-    if (seatsRingFill && seatsCountEl) {
-        const totalSeats = 60;
-        const remainingSeats = 60; // Hardcoded for now — will be dynamic later
-        const circumference = 2 * Math.PI * 52; // r=52
-        const fillPercent = remainingSeats / totalSeats;
-        const offset = circumference * (1 - fillPercent);
-
-        // Start fully hidden, animate on scroll
-        seatsRingFill.style.strokeDasharray = circumference;
-        seatsRingFill.style.strokeDashoffset = circumference;
-
-        const seatsObserver = new IntersectionObserver((entries) => {
+    if (trackSeatTrackers.length > 0) {
+        const seatObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        seatsRingFill.style.strokeDashoffset = offset;
-                    }, 300);
+                    const tracker = entry.target;
+                    const total = parseInt(tracker.dataset.total) || 60;
+                    const remaining = parseInt(tracker.dataset.remaining) || 60;
+                    const fillPercent = (remaining / total) * 100;
+                    const fillBar = tracker.querySelector('.track-seat-fill');
+                    const countStrong = tracker.querySelector('.track-seat-count strong');
 
-                    // Animate count number
-                    animateNumber(seatsCountEl, 0, remainingSeats, 1500);
-                    seatsObserver.disconnect();
+                    if (fillBar) {
+                        // Start from 0, animate to fill
+                        fillBar.style.width = '0%';
+                        setTimeout(() => {
+                            fillBar.style.width = fillPercent + '%';
+                        }, 200);
+                    }
+
+                    if (countStrong) {
+                        animateNumber(countStrong, 0, remaining, 1200);
+                    }
+
+                    seatObserver.unobserve(tracker);
                 }
             });
         }, { threshold: 0.3 });
 
-        const seatsBox = document.querySelector('.seats-box');
-        if (seatsBox) seatsObserver.observe(seatsBox);
+        trackSeatTrackers.forEach(tracker => seatObserver.observe(tracker));
     }
 
     // --- Number Animation Helper ---
@@ -91,6 +92,24 @@ function initStudentPage() {
 
         requestAnimationFrame(update);
     }
+
+    // --- Curriculum Toggle (expand/collapse) ---
+    document.querySelectorAll('.curriculum-toggle').forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const curriculum = toggle.closest('.track-curriculum');
+            const weeks = curriculum.querySelector('.curriculum-weeks');
+            const hint = toggle.querySelector('.toggle-hint');
+
+            if (!weeks) return;
+
+            const isHidden = weeks.style.display === 'none';
+            weeks.style.display = isHidden ? 'flex' : 'none';
+
+            if (hint) {
+                hint.textContent = isHidden ? '(click to collapse)' : '(click to expand)';
+            }
+        });
+    });
 
     // --- Scroll Reveal for Student-specific elements ---
     const studentRevealSelectors = [

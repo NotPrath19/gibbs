@@ -45,7 +45,7 @@
             Join our immersive, role-based training program and work inside a professional company environment. Choose your track, build real projects, and graduate with a portfolio that gets you hired.
         </p>
 
-        <!-- Countdown + Seats Row -->
+        <!-- Countdown Only (seats are now per-track) -->
         <div class="hero-urgency-row animate-fade-up delay-3">
             <div class="countdown-box" id="countdownBox">
                 <div class="countdown-label"><i class="fas fa-clock"></i> First Batch Starts In</div>
@@ -71,22 +71,6 @@
                     </div>
                 </div>
             </div>
-            <div class="seats-box">
-                <div class="seats-circle">
-                    <svg viewBox="0 0 120 120" class="seats-ring">
-                        <circle cx="60" cy="60" r="52" class="seats-ring-bg"/>
-                        <circle cx="60" cy="60" r="52" class="seats-ring-fill" id="seatsRingFill"/>
-                    </svg>
-                    <div class="seats-number">
-                        <span class="seats-count" id="seatsCount">60</span>
-                        <span class="seats-label">seats left</span>
-                    </div>
-                </div>
-                <div class="seats-meta">
-                    <span class="seats-tag"><i class="fas fa-fire"></i> Limited Seats</span>
-                    <span class="seats-sub">Per track · Per batch</span>
-                </div>
-            </div>
         </div>
 
         <div class="hero-buttons animate-fade-up delay-4">
@@ -106,39 +90,39 @@
         <div class="section-header">
             <span class="section-tag"><i class="fas fa-star"></i> Why This Program</span>
             <h2 class="section-title">Not Just a Course — A <span class="gradient-text">Professional Experience</span></h2>
-            <p class="section-subtitle">You won't just watch lectures. You'll work as a professional inside a simulated company — with real tools, real deadlines, and real teammates.</p>
+            <p class="section-subtitle">You won't just watch lectures. You'll work as a professional inside a simulated company — with real responsibilities, real deadlines, and real teammates across multiple departments.</p>
         </div>
 
         <div class="value-grid">
             <div class="value-card">
                 <div class="value-icon"><i class="fas fa-building"></i></div>
                 <h4>Professional Company Environment</h4>
-                <p>Work inside a simulated startup with Scrum teams, Jira boards, Git repos, and Docker deployments. Experience what a real job feels like.</p>
+                <p>Work inside a simulated company with structured teams and workflows. Whether you're writing code, running tests, analyzing data, recruiting talent, or planning campaigns — you'll experience what a real job feels like.</p>
             </div>
             <div class="value-card">
                 <div class="value-icon"><i class="fas fa-users-cog"></i></div>
                 <h4>Cross-Functional Collaboration</h4>
-                <p>Software Engineers, QA, Data Analysts, HR & Marketing — all 5 roles work together on one product. Just like in industry.</p>
+                <p>Software Engineers, QA, Data Analysts, HR & Marketing — all 5 roles work together on one product. You'll collaborate across departments, just like in a real company.</p>
             </div>
             <div class="value-card">
                 <div class="value-icon"><i class="fas fa-tools"></i></div>
                 <h4>Industry Tools From Day 1</h4>
-                <p>Git, Docker, Jira, PostgreSQL, Playwright, BI dashboards — you'll use the same tools that companies use every day.</p>
+                <p>Each track uses the tools professionals use daily — from Jira and Git to BI dashboards, HRIS platforms, marketing analytics, and automation frameworks. Learn by doing, not by watching.</p>
             </div>
             <div class="value-card">
                 <div class="value-icon"><i class="fas fa-briefcase"></i></div>
                 <h4>Portfolio, Not Just a Certificate</h4>
-                <p>Graduate with a GitHub portfolio, demo recordings, and real project artifacts that impress interviewers — not just another certificate.</p>
+                <p>Graduate with tangible work — code repositories, test reports, data dashboards, recruitment playbooks, or marketing campaigns. Real artifacts that demonstrate your skills to employers.</p>
             </div>
             <div class="value-card">
                 <div class="value-icon"><i class="fas fa-chalkboard-teacher"></i></div>
                 <h4>Expert Mentorship</h4>
-                <p>Industry-experienced instructors guide you with weekly feedback, code reviews, sprint demos, and 1-on-1 mentoring throughout the program.</p>
+                <p>Industry-experienced instructors guide your progress with regular feedback, work reviews, and structured evaluations throughout the 12-week program.</p>
             </div>
             <div class="value-card">
                 <div class="value-icon"><i class="fas fa-handshake"></i></div>
-                <h4>Placement Assistance</h4>
-                <p>Active placement support from months 3–6. Maintain 70% attendance + 50% grade to qualify. We prepare you for interviews and connect you with employers.</p>
+                <h4>Employment Opportunities</h4>
+                <p>From months 3–6, we provide interview opportunities with hiring companies. You crack the interview, you get the job. Maintain 70% attendance + 50% grade to qualify. <em>Placements are not guaranteed.</em></p>
             </div>
         </div>
     </div>
@@ -160,7 +144,6 @@
                 <div class="program-card-accent"></div>
                 <div class="track-badge-row">
                     <span class="track-mode"><i class="fas fa-laptop-code"></i> Online & Offline</span>
-                    <span class="track-seats"><i class="fas fa-chair"></i> 60 seats</span>
                 </div>
                 <div class="program-card-header">
                     <div class="program-icon"><i class="fas fa-code"></i></div>
@@ -171,10 +154,35 @@
                 </div>
                 <h3 class="program-name">Software Engineer <span>(Full-Stack)</span></h3>
                 <p class="program-tagline">Java • Angular • PostgreSQL • Git • Docker • Jira</p>
-                <p class="program-desc">Join a Scrum team, build a real web application, write backend APIs in Java/Spring Boot, create Angular frontends, manage databases, and deploy with Docker.</p>
+                <p class="program-desc">Build real web applications from front to back. Learn industry-standard technologies and ship production-quality code as part of a professional development team.</p>
                 <div class="program-skills">
                     <span>Java</span><span>Spring Boot</span><span>Angular</span><span>PostgreSQL</span><span>REST API</span><span>Git</span><span>Docker</span><span>Jira</span><span>Scrum</span>
                 </div>
+
+                <!-- 12-Week Breakdown -->
+                <div class="track-curriculum">
+                    <h4 class="curriculum-toggle"><i class="fas fa-calendar-alt"></i> 12-Week Curriculum <span class="toggle-hint">(click to expand)</span></h4>
+                    <div class="curriculum-weeks" style="display: none;">
+                        <div class="week-block"><span class="week-label">Weeks 1–2</span><span class="week-topic">Java Fundamentals & Object-Oriented Programming</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 3–4</span><span class="week-topic">Spring Boot & REST API Development</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 5–6</span><span class="week-topic">Angular Frontend Development</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 7–8</span><span class="week-topic">PostgreSQL & Database Design</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 9–10</span><span class="week-topic">Git, Docker & Deployment Basics</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 11–12</span><span class="week-topic">Full-Stack Capstone Project & Portfolio</span></div>
+                    </div>
+                </div>
+
+                <!-- Per-Track Seat Tracker -->
+                <div class="track-seat-tracker" data-track="se" data-total="60" data-remaining="60">
+                    <div class="track-seat-bar">
+                        <div class="track-seat-fill" style="width: 100%;"></div>
+                    </div>
+                    <div class="track-seat-info">
+                        <span class="track-seat-count"><i class="fas fa-chair"></i> <strong>60</strong> seats remaining</span>
+                        <span class="track-seat-total">of 60</span>
+                    </div>
+                </div>
+
                 <a href="#enroll" class="track-enroll-btn"><i class="fas fa-arrow-right"></i> Enroll in This Track</a>
             </div>
 
@@ -183,7 +191,6 @@
                 <div class="program-card-accent"></div>
                 <div class="track-badge-row">
                     <span class="track-mode"><i class="fas fa-laptop-code"></i> Online & Offline</span>
-                    <span class="track-seats"><i class="fas fa-chair"></i> 60 seats</span>
                 </div>
                 <div class="program-card-header">
                     <div class="program-icon"><i class="fas fa-bug"></i></div>
@@ -194,10 +201,35 @@
                 </div>
                 <h3 class="program-name">QA Engineer <span>(Automation)</span></h3>
                 <p class="program-tagline">Playwright • Java • Git • Docker • Jira</p>
-                <p class="program-desc">Be the quality gate. Translate requirements into test cases, automate testing with Playwright, track bugs in Jira, and ensure the product ships clean.</p>
+                <p class="program-desc">Master software testing — from manual test design to full automation. Learn to find bugs before users do and ensure every release meets quality standards.</p>
                 <div class="program-skills">
                     <span>Playwright</span><span>Java</span><span>SDLC</span><span>STLC</span><span>Automation</span><span>Git</span><span>Docker</span><span>Jira</span><span>API Testing</span>
                 </div>
+
+                <!-- 12-Week Breakdown -->
+                <div class="track-curriculum">
+                    <h4 class="curriculum-toggle"><i class="fas fa-calendar-alt"></i> 12-Week Curriculum <span class="toggle-hint">(click to expand)</span></h4>
+                    <div class="curriculum-weeks" style="display: none;">
+                        <div class="week-block"><span class="week-label">Weeks 1–2</span><span class="week-topic">Software Testing Fundamentals (SDLC & STLC)</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 3–4</span><span class="week-topic">Manual Testing & Test Case Design</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 5–6</span><span class="week-topic">Java for Test Automation</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 7–8</span><span class="week-topic">Playwright Automation Framework</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 9–10</span><span class="week-topic">API Testing & CI/CD Integration</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 11–12</span><span class="week-topic">Automation Capstone Project & Portfolio</span></div>
+                    </div>
+                </div>
+
+                <!-- Per-Track Seat Tracker -->
+                <div class="track-seat-tracker" data-track="qa" data-total="60" data-remaining="60">
+                    <div class="track-seat-bar">
+                        <div class="track-seat-fill" style="width: 100%;"></div>
+                    </div>
+                    <div class="track-seat-info">
+                        <span class="track-seat-count"><i class="fas fa-chair"></i> <strong>60</strong> seats remaining</span>
+                        <span class="track-seat-total">of 60</span>
+                    </div>
+                </div>
+
                 <a href="#enroll" class="track-enroll-btn"><i class="fas fa-arrow-right"></i> Enroll in This Track</a>
             </div>
 
@@ -206,7 +238,6 @@
                 <div class="program-card-accent"></div>
                 <div class="track-badge-row">
                     <span class="track-mode"><i class="fas fa-laptop-code"></i> Online & Offline</span>
-                    <span class="track-seats"><i class="fas fa-chair"></i> 60 seats</span>
                 </div>
                 <div class="program-card-header">
                     <div class="program-icon"><i class="fas fa-chart-bar"></i></div>
@@ -217,10 +248,35 @@
                 </div>
                 <h3 class="program-name">Data Analyst</h3>
                 <p class="program-tagline">PostgreSQL SQL • Spreadsheets • BI Tools • Git • Docker</p>
-                <p class="program-desc">Be the analytical brain. Pull data from PostgreSQL, clean and transform datasets, build interactive dashboards, and deliver insights that drive business decisions.</p>
+                <p class="program-desc">Turn raw data into actionable insights. Master SQL, build interactive dashboards, and learn to present data-driven recommendations that influence business decisions.</p>
                 <div class="program-skills">
                     <span>SQL</span><span>PostgreSQL</span><span>BI Tools</span><span>Dashboards</span><span>Cohort Analysis</span><span>Data Cleaning</span><span>Git</span><span>Docker</span>
                 </div>
+
+                <!-- 12-Week Breakdown -->
+                <div class="track-curriculum">
+                    <h4 class="curriculum-toggle"><i class="fas fa-calendar-alt"></i> 12-Week Curriculum <span class="toggle-hint">(click to expand)</span></h4>
+                    <div class="curriculum-weeks" style="display: none;">
+                        <div class="week-block"><span class="week-label">Weeks 1–2</span><span class="week-topic">SQL Fundamentals & PostgreSQL Setup</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 3–4</span><span class="week-topic">Advanced SQL & Data Modeling</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 5–6</span><span class="week-topic">Data Cleaning & Transformation Techniques</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 7–8</span><span class="week-topic">BI Tools & Interactive Dashboard Building</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 9–10</span><span class="week-topic">Cohort Analysis & Business Reporting</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 11–12</span><span class="week-topic">Analytics Capstone Project & Portfolio</span></div>
+                    </div>
+                </div>
+
+                <!-- Per-Track Seat Tracker -->
+                <div class="track-seat-tracker" data-track="da" data-total="60" data-remaining="60">
+                    <div class="track-seat-bar">
+                        <div class="track-seat-fill" style="width: 100%;"></div>
+                    </div>
+                    <div class="track-seat-info">
+                        <span class="track-seat-count"><i class="fas fa-chair"></i> <strong>60</strong> seats remaining</span>
+                        <span class="track-seat-total">of 60</span>
+                    </div>
+                </div>
+
                 <a href="#enroll" class="track-enroll-btn"><i class="fas fa-arrow-right"></i> Enroll in This Track</a>
             </div>
 
@@ -229,7 +285,6 @@
                 <div class="program-card-accent"></div>
                 <div class="track-badge-row">
                     <span class="track-mode"><i class="fas fa-laptop-code"></i> Online & Offline</span>
-                    <span class="track-seats"><i class="fas fa-chair"></i> 60 seats</span>
                 </div>
                 <div class="program-card-header">
                     <div class="program-icon"><i class="fas fa-users-cog"></i></div>
@@ -240,10 +295,35 @@
                 </div>
                 <h3 class="program-name">HR Specialist</h3>
                 <p class="program-tagline">Recruitment • Onboarding • Operations • Surveys • Documentation</p>
-                <p class="program-desc">Be the people partner. Design recruitment processes, plan onboarding, manage documentation, and create a positive company culture through feedback and engagement.</p>
+                <p class="program-desc">Learn end-to-end HR operations — from talent acquisition and onboarding to employee engagement and policy documentation. Build the people skills every company needs.</p>
                 <div class="program-skills">
                     <span>Recruitment</span><span>Onboarding</span><span>HRIS</span><span>KYC</span><span>Surveys</span><span>Communication</span><span>Documentation</span>
                 </div>
+
+                <!-- 12-Week Breakdown -->
+                <div class="track-curriculum">
+                    <h4 class="curriculum-toggle"><i class="fas fa-calendar-alt"></i> 12-Week Curriculum <span class="toggle-hint">(click to expand)</span></h4>
+                    <div class="curriculum-weeks" style="display: none;">
+                        <div class="week-block"><span class="week-label">Weeks 1–2</span><span class="week-topic">HR Fundamentals & Recruitment Basics</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 3–4</span><span class="week-topic">Talent Acquisition & Candidate Screening</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 5–6</span><span class="week-topic">Onboarding, KYC & Documentation</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 7–8</span><span class="week-topic">Employee Engagement & Feedback Surveys</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 9–10</span><span class="week-topic">HR Operations & Compliance</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 11–12</span><span class="week-topic">HR Strategy Capstone & Portfolio</span></div>
+                    </div>
+                </div>
+
+                <!-- Per-Track Seat Tracker -->
+                <div class="track-seat-tracker" data-track="hr" data-total="60" data-remaining="60">
+                    <div class="track-seat-bar">
+                        <div class="track-seat-fill" style="width: 100%;"></div>
+                    </div>
+                    <div class="track-seat-info">
+                        <span class="track-seat-count"><i class="fas fa-chair"></i> <strong>60</strong> seats remaining</span>
+                        <span class="track-seat-total">of 60</span>
+                    </div>
+                </div>
+
                 <a href="#enroll" class="track-enroll-btn"><i class="fas fa-arrow-right"></i> Enroll in This Track</a>
             </div>
 
@@ -252,7 +332,6 @@
                 <div class="program-card-accent"></div>
                 <div class="track-badge-row">
                     <span class="track-mode"><i class="fas fa-laptop-code"></i> Online & Offline</span>
-                    <span class="track-seats"><i class="fas fa-chair"></i> 60 seats</span>
                 </div>
                 <div class="program-card-header">
                     <div class="program-icon"><i class="fas fa-bullhorn"></i></div>
@@ -263,10 +342,35 @@
                 </div>
                 <h3 class="program-name">Marketing Associate</h3>
                 <p class="program-tagline">Digital & Campus Marketing • Content • Research • Analytics</p>
-                <p class="program-desc">Position and promote the product. Craft messages, design campaigns, collect feedback, and work with the Data team to understand what resonates with your audience.</p>
+                <p class="program-desc">Learn digital marketing from strategy to execution. Plan campaigns, create content, analyze performance, and understand what drives user engagement and conversions.</p>
                 <div class="program-skills">
                     <span>Digital Marketing</span><span>Content Creation</span><span>Canva</span><span>SEO</span><span>Social Media</span><span>Analytics</span><span>A/B Testing</span><span>Research</span>
                 </div>
+
+                <!-- 12-Week Breakdown -->
+                <div class="track-curriculum">
+                    <h4 class="curriculum-toggle"><i class="fas fa-calendar-alt"></i> 12-Week Curriculum <span class="toggle-hint">(click to expand)</span></h4>
+                    <div class="curriculum-weeks" style="display: none;">
+                        <div class="week-block"><span class="week-label">Weeks 1–2</span><span class="week-topic">Marketing Fundamentals & Market Research</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 3–4</span><span class="week-topic">Digital Marketing & SEO Basics</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 5–6</span><span class="week-topic">Content Creation & Social Media Strategy</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 7–8</span><span class="week-topic">Campaign Planning & Execution</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 9–10</span><span class="week-topic">Marketing Analytics & A/B Testing</span></div>
+                        <div class="week-block"><span class="week-label">Weeks 11–12</span><span class="week-topic">Marketing Campaign Capstone & Portfolio</span></div>
+                    </div>
+                </div>
+
+                <!-- Per-Track Seat Tracker -->
+                <div class="track-seat-tracker" data-track="mkt" data-total="60" data-remaining="60">
+                    <div class="track-seat-bar">
+                        <div class="track-seat-fill" style="width: 100%;"></div>
+                    </div>
+                    <div class="track-seat-info">
+                        <span class="track-seat-count"><i class="fas fa-chair"></i> <strong>60</strong> seats remaining</span>
+                        <span class="track-seat-total">of 60</span>
+                    </div>
+                </div>
+
                 <a href="#enroll" class="track-enroll-btn"><i class="fas fa-arrow-right"></i> Enroll in This Track</a>
             </div>
 
@@ -280,7 +384,7 @@
         <div class="section-header">
             <span class="section-tag"><i class="fas fa-route"></i> Your Journey</span>
             <h2 class="section-title">How It <span class="gradient-text">Works</span></h2>
-            <p class="section-subtitle">From enrollment to placement — here's what your 12-week journey looks like.</p>
+            <p class="section-subtitle">From enrollment to employment opportunities — here's what your journey looks like.</p>
         </div>
 
         <div class="methodology-flow">
@@ -296,23 +400,23 @@
                 <div class="method-number">02</div>
                 <div class="method-content">
                     <h4>Join Your Professional Company</h4>
-                    <p>You're assigned to a cross-functional team — just like a real startup. Software Engineers, QA, Data Analysts, HR, and Marketing all work together.</p>
+                    <p>You're assigned to a cross-functional team — just like a real company. Software Engineers, QA, Data Analysts, HR, and Marketing all work together on the same product.</p>
                 </div>
             </div>
             <div class="method-connector"><i class="fas fa-arrow-down"></i></div>
             <div class="method-step">
                 <div class="method-number">03</div>
                 <div class="method-content">
-                    <h4>Build Real Projects in Sprints</h4>
-                    <p>Work in 2-week Scrum sprints. Pick Jira tickets, push code to Git, run automated tests, build dashboards, and present sprint demos — all real.</p>
+                    <h4>Learn, Build & Deliver</h4>
+                    <p>Follow a structured 12-week curriculum for your track. Apply what you learn immediately by working on real deliverables — code, test reports, dashboards, HR documents, or marketing campaigns.</p>
                 </div>
             </div>
             <div class="method-connector"><i class="fas fa-arrow-down"></i></div>
             <div class="method-step">
                 <div class="method-number">04</div>
                 <div class="method-content">
-                    <h4>Get Expert Feedback Every Week</h4>
-                    <p>Industry-experienced mentors review your work, provide code reviews, and guide your growth with weekly 1-on-1 feedback sessions.</p>
+                    <h4>Get Regular Feedback</h4>
+                    <p>Industry-experienced mentors review your work and guide your progress with structured evaluations and actionable feedback throughout the program.</p>
                 </div>
             </div>
             <div class="method-connector"><i class="fas fa-arrow-down"></i></div>
@@ -320,15 +424,15 @@
                 <div class="method-number">05</div>
                 <div class="method-content">
                     <h4>Graduate With a Portfolio</h4>
-                    <p>Week 12 ends with a company-wide demo. You leave with a GitHub portfolio, QA reports, dashboards, and marketing decks — ready for interviews.</p>
+                    <p>Week 12 ends with a final presentation. You leave with real work artifacts — code repos, test suites, analytics dashboards, HR playbooks, or campaign reports — ready for job interviews.</p>
                 </div>
             </div>
             <div class="method-connector"><i class="fas fa-arrow-down"></i></div>
             <div class="method-step">
                 <div class="method-number">06</div>
                 <div class="method-content">
-                    <h4>Placement Assistance (Months 3–6)</h4>
-                    <p>Active placement support for 3 months after the program. Maintain 70% attendance + 50% grade to qualify. We prep you and connect you with employers. <em>Placements are facilitated, not guaranteed.</em></p>
+                    <h4>Employment Opportunities (Months 3–6)</h4>
+                    <p>We provide interview opportunities with hiring companies for 3 months after the program. You crack the interview, you get the job. Maintain 70% attendance + 50% grade to qualify. <em>Placements are not guaranteed — you earn your position through the interview.</em></p>
                 </div>
             </div>
         </div>
@@ -353,18 +457,17 @@
                 </div>
                 <div class="enroll-badge">Online</div>
                 <h3>Enroll as Individual</h3>
-                <p class="enroll-desc">Learn from anywhere. Join our live online program with expert instructors, real project work, and full mentorship — no college affiliation needed.</p>
+                <p class="enroll-desc">Learn from anywhere. Join our live online program with expert instructors and real project work — no college affiliation needed.</p>
                 <ul class="enroll-features">
                     <li><i class="fas fa-check-circle"></i> Live online classes with instructors</li>
                     <li><i class="fas fa-check-circle"></i> Same curriculum & real project experience</li>
                     <li><i class="fas fa-check-circle"></i> Flexible — attend from home</li>
                     <li><i class="fas fa-check-circle"></i> Cross-functional team collaboration</li>
                     <li><i class="fas fa-check-circle"></i> Portfolio + Gibbs certification</li>
-                    <li><i class="fas fa-check-circle"></i> Placement assistance included</li>
+                    <li><i class="fas fa-check-circle"></i> Interview opportunities with hiring companies</li>
                 </ul>
                 <div class="enroll-batch-info">
                     <span><i class="fas fa-calendar"></i> First Batch: October 30, 2026</span>
-                    <span><i class="fas fa-chair"></i> <strong>60</strong> seats remaining</span>
                 </div>
                 <a href="#" class="btn btn-primary enroll-cta"><i class="fas fa-arrow-right"></i> Enroll Online — Individual</a>
             </div>
@@ -384,11 +487,10 @@
                     <li><i class="fas fa-check-circle"></i> Face-to-face mentorship & collaboration</li>
                     <li><i class="fas fa-check-circle"></i> Work with your college peers</li>
                     <li><i class="fas fa-check-circle"></i> Portfolio + Gibbs certification</li>
-                    <li><i class="fas fa-check-circle"></i> Placement assistance included</li>
+                    <li><i class="fas fa-check-circle"></i> Interview opportunities with hiring companies</li>
                 </ul>
                 <div class="enroll-batch-info">
                     <span><i class="fas fa-calendar"></i> First Batch: October 30, 2026</span>
-                    <span><i class="fas fa-chair"></i> <strong>60</strong> seats remaining</span>
                 </div>
                 <a href="#" class="btn btn-primary enroll-cta"><i class="fas fa-arrow-right"></i> Enroll via Partner College</a>
             </div>

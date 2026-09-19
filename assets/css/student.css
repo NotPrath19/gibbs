@@ -568,18 +568,195 @@
         font-size: 1.3rem;
     }
 
-    .seats-circle {
-        width: 90px;
-        height: 90px;
-    }
-
-    .seats-count {
-        font-size: 1.5rem;
-    }
-
     .track-badge-row {
         flex-direction: column;
         gap: 8px;
         align-items: flex-start;
     }
+
+    .curriculum-weeks {
+        gap: 6px;
+    }
+
+    .week-block {
+        flex-direction: column;
+        gap: 4px;
+        padding: 8px 10px;
+    }
+
+    .week-label {
+        font-size: 0.65rem;
+    }
+
+    .week-topic {
+        font-size: 0.78rem;
+    }
+}
+
+/* --- Track Curriculum Breakdown --- */
+.track-curriculum {
+    margin-top: 16px;
+    border-top: 1px solid rgba(67, 198, 172, 0.1);
+    padding-top: 14px;
+}
+
+.curriculum-toggle {
+    font-family: var(--font-accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-light);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    transition: color var(--transition-fast);
+    user-select: none;
+}
+
+.curriculum-toggle:hover {
+    color: var(--primary);
+}
+
+.curriculum-toggle i {
+    font-size: 0.8rem;
+}
+
+.toggle-hint {
+    font-size: 0.7rem;
+    font-weight: 400;
+    opacity: 0.5;
+    margin-left: auto;
+}
+
+.curriculum-weeks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+    animation: fadeSlideDown 0.3s ease;
+}
+
+@keyframes fadeSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.week-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: rgba(67, 198, 172, 0.04);
+    border: 1px solid rgba(67, 198, 172, 0.08);
+    border-radius: 8px;
+    transition: all var(--transition-fast);
+}
+
+.week-block:hover {
+    background: rgba(67, 198, 172, 0.08);
+    border-color: rgba(67, 198, 172, 0.15);
+}
+
+.week-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    min-width: 68px;
+    padding: 3px 8px;
+    background: rgba(67, 198, 172, 0.1);
+    border-radius: 4px;
+    text-align: center;
+}
+
+.week-topic {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.4;
+}
+
+/* --- Per-Track Seat Tracker --- */
+.track-seat-tracker {
+    margin-top: 16px;
+    padding: 14px 16px;
+    background: rgba(247, 183, 51, 0.04);
+    border: 1px solid rgba(247, 183, 51, 0.12);
+    border-radius: 10px;
+}
+
+.track-seat-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.track-seat-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 4px;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.track-seat-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3));
+    border-radius: 0 4px 4px 0;
+    animation: seat-shimmer 2s ease-in-out infinite;
+}
+
+@keyframes seat-shimmer {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+}
+
+.track-seat-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.track-seat-count {
+    font-family: var(--font-accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.track-seat-count i {
+    font-size: 0.75rem;
+}
+
+.track-seat-count strong {
+    font-family: var(--font-mono);
+    color: var(--accent-light);
+}
+
+.track-seat-total {
+    font-family: var(--font-accent);
+    font-size: 0.72rem;
+    color: var(--text-light);
+    opacity: 0.7;
 }
